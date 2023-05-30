@@ -2,7 +2,7 @@
 import pandas as pd
 pd.options.display.float_format = '{:.0f}'.format
 pd.set_option('display.width', 53)
-pd.set_option('display.max_columns', 3)
+pd.set_option('display.max_columns', 5)
 
 # import the land temperature data
 percapitaGDP = pd.read_excel("data/GDPpercapita.xlsx",
@@ -19,6 +19,7 @@ percapitaGDP.rename(columns={'Year':'metro'}, inplace=True)
 percapitaGDP.metro.str.startswith(' ').any()
 percapitaGDP.metro.str.endswith(' ').any()
 percapitaGDP.metro = percapitaGDP.metro.str.strip()
+percapitaGDP.metro.str.endswith(' ').any()
 
 # convert the data columns to numeric
 for col in percapitaGDP.columns[1:]:

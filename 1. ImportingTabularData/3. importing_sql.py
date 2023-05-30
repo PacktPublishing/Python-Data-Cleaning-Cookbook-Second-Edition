@@ -8,7 +8,7 @@ pd.set_option('display.max_columns', 5)
 pd.options.display.float_format = '{:,.2f}'.format
 
 # set sql select statement to pull the data
-query = "SELECT studentid, school, sex, age, famsize,\
+sqlselect = "SELECT studentid, school, sex, age, famsize,\
   medu AS mothereducation, fedu AS fathereducation,\
   traveltime, studytime, failures, famrel, freetime,\
   goout, g1 AS gradeperiod1, g2 AS gradeperiod2,\
@@ -21,7 +21,7 @@ password = "pdccpass"
 database = "pdcctest"
 conn = pymssql.connect(server=server,
   user=user, password=password, database=database)
-studentmath = pd.read_sql(query,conn)
+studentmath = pd.read_sql(sqlselect,conn)
 conn.close()
 
 # use the mysql api and read_sql to retrieve and load data from mysql
@@ -30,7 +30,7 @@ host = "pdccmysql.c9sqqzd5fulv.us-west-2.rds.amazonaws.com"
 user = "pdccuser"
 password = "pdccpass"
 database = "pdccschema"
-connmysql = mysql.connector.connect(host=host,
+connmysql = mysql.connector.connect(host=host,\
   database=database,user=user,password=password)
 studentmath = pd.read_sql(sqlselect,connmysql)
 connmysql.close()

@@ -3,6 +3,7 @@ pd.options.display.float_format = '{:,.2f}'.format
 pd.set_option('display.width', 53)
 pd.set_option('display.max_columns', 5)
 
+
 # import the land temperature data
 landtemps = pd.read_csv('data/landtempssample.csv',
     names=['stationid','year','month','avgtemp','latitude',
