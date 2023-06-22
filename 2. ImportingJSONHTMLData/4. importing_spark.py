@@ -5,7 +5,6 @@ from pyspark.sql import SparkSession
 pd.set_option('display.width', 78)
 pd.set_option('display.max_columns',6)
 
-#spark = SparkSession.builder.master("local").appName("newapp").getOrCreate()
 spark = SparkSession.builder \
    .getOrCreate()
 
