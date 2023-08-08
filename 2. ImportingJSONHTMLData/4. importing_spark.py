@@ -10,7 +10,7 @@ spark = SparkSession.builder \
    .getOrCreate()
 
 landtemps = spark.read.option("header",True) \
-     .csv("data/landtemps.csv")
+     .csv("data/landtemps.zip")
 
 type(landtemps)
 type(spark)
@@ -39,7 +39,7 @@ allcandidatenews \
   .select("source","title","story_position") \
   .show(5)
 
-# look at the structure of the JSON data
+# display structure of JSON data
 allcandidatenews.count()
 
 allcandidatenews.printSchema()
