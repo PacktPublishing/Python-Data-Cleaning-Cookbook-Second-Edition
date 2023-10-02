@@ -1,13 +1,13 @@
 # import pandas, matplotlib, and scikit learn
 import pandas as pd
 import matplotlib.pyplot as plt
-pd.set_option('display.width', 80)
+pd.set_option('display.width', 60)
 pd.set_option('display.max_rows', 20)
-pd.set_option('display.max_columns', 7)
+pd.set_option('display.max_columns', 4)
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import IsolationForest
 from mpl_toolkits.mplot3d import Axes3D
-covidtotals = pd.read_csv("data/covidtotals.csv")
+covidtotals = pd.read_csv("data/covidtotals720.csv")
 covidtotals.set_index("iso_code", inplace=True)
 
 # create a standardized analysis data frame
