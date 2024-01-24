@@ -1,8 +1,8 @@
 # import pandas, matplotlib, and statsmodels
 import pandas as pd
 import numpy as np
-pd.set_option('display.width', 200)
-pd.set_option('display.max_columns', 35)
+pd.set_option('display.width', 78)
+pd.set_option('display.max_columns', 7)
 pd.set_option('display.max_rows', 200)
 pd.options.display.float_format = '{:,.2f}'.format
 nls97 = pd.read_csv("data/nls97b.csv")
@@ -10,6 +10,7 @@ nls97.set_index("personid", inplace=True)
 
 # show some descriptive statistics
 gpaoverall = nls97.gpaoverall
+
 gpaoverall.mean()
 gpaoverall.describe()
 gpaoverall.quantile(np.arange(0.1,1.1,0.1))

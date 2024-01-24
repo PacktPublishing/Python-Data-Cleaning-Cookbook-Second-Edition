@@ -20,14 +20,20 @@ landtemps.groupby(['elevation_group'])['elevation'].agg(['count','min','max'])
 
 # use the numpy where function to create a categorical series with 3 values
 landtemps.elevation.median()
-landtemps['elevation_group'] = np.where(landtemps.elevation>
-  landtemps.elevation.quantile(0.8),'High',np.where(landtemps.elevation>
-  landtemps.elevation.median(),'Medium','Low'))
+landtemps['elevation_group'] = \
+  np.where(landtemps.elevation>
+    landtemps.elevation.quantile(0.8),'High',
+    np.where(landtemps.elevation>landtemps.elevation.median(),
+    'Medium','Low'))
 landtemps.elevation_group = landtemps.elevation_group.astype('category')
-landtemps.groupby(['elevation_group'])['elevation'].agg(['count','min','max'])
+landtemps.groupby(['elevation_group'])['elevation'].\
+  agg(['count','min','max'])
 
 # use numpy select to evaluate a list of conditions
-test = [(nls97.gpaoverall<2) & (nls97.highestdegree=='0. None'), nls97.highestdegree=='0. None', nls97.gpaoverall<2]
+test = [(nls97.gpaoverall<2) & 
+  (nls97.highestdegree=='0. None'), 
+   nls97.highestdegree=='0. None', 
+   nls97.gpaoverall<2]
 result = ['1. Low GPA and No Diploma','2. No Diploma','3. Low GPA']
 nls97['hsachieve'] = np.select(test, result, '4. Did Okay')
 nls97[['hsachieve','gpaoverall','highestdegree']].head()
