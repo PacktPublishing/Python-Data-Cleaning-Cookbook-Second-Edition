@@ -10,19 +10,28 @@ nls97.set_index("personid", inplace=True)
 
 # tests whether a string pattern exists in a string
 nls97.govprovidejobs.value_counts()
-nls97['govprovidejobsdefprob'] = np.where(nls97.govprovidejobs.isnull(),
-  np.nan,np.where(nls97.govprovidejobs.str.contains("not"),"No","Yes"))
+
+nls97['govprovidejobsdefprob'] = \
+  np.where(nls97.govprovidejobs.isnull(),
+    np.nan,np.where(nls97.govprovidejobs.str.contains("not"),
+      "No","Yes"))
 pd.crosstab(nls97.govprovidejobs, nls97.govprovidejobsdefprob)
 
 # handle leading or trailing spaces in a string
 nls97.maritalstatus.value_counts()
 nls97.maritalstatus.str.startswith(' ').any()
 nls97.maritalstatus.str.endswith(' ').any()
-nls97['evermarried'] = np.where(nls97.maritalstatus.isnull(),np.nan,np.where(nls97.maritalstatus.str.strip()=="Never-married","No","Yes"))
+nls97['evermarried'] = \
+  np.where(nls97.maritalstatus.isnull(),np.nan,
+    np.where(nls97.maritalstatus.str.strip()=="Never-married",
+      "No","Yes"))
 pd.crosstab(nls97.maritalstatus, nls97.evermarried)
 
 # use isin to compare a string value to a list of values
-nls97['receivedba'] = np.where(nls97.highestdegree.isnull(),np.nan,np.where(nls97.highestdegree.str[0:1].isin(['4','5','6','7']),"Yes","No"))
+nls97['receivedba'] = \
+  np.where(nls97.highestdegree.isnull(),np.nan,
+    np.where(nls97.highestdegree.str[0:1].isin(['4','5','6','7']),
+      "Yes","No"))
 pd.crosstab(nls97.highestdegree, nls97.receivedba)
 
 # convert a text response to numeric using numbers in the text

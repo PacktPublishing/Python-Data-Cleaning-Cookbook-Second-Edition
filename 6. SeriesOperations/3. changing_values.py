@@ -10,6 +10,7 @@ nls97.set_index("personid", inplace=True)
 # multiply all values of a series by a scalar
 nls97.gpaoverall.head()
 gpaoverall100 = nls97['gpaoverall'] * 100
+
 gpaoverall100.head()
 
 # use loc accessor to apply a scalar to selected rows

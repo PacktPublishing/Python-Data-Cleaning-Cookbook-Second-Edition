@@ -10,6 +10,7 @@ nls97.set_index("personid", inplace=True)
 # create a series from the GPA column
 gpaoverall = nls97.gpaoverall
 type(gpaoverall)
+
 gpaoverall.head()
 gpaoverall.index
 
