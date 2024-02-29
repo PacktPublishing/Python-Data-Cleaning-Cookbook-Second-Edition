@@ -1,50 +1,58 @@
 # import pandas, numpy, and matplotlib
 import pandas as pd
-import matplotlib.pyplot as plt
-from pandasai import PandasAI
+#import matplotlib.pyplot as plt
 from pandasai.llm.openai import OpenAI
+from pandasai import SmartDataframe
 
-pd.set_option('display.width', 53)
-pd.set_option('display.max_columns', 5)
+pd.set_option('display.width', 70)
+pd.set_option('display.max_columns', 7)
 pd.set_option('display.max_rows', 20)
 pd.options.display.float_format = '{:,.0f}'.format
 
-covidtotals = pd.read_csv("data/covidtotals720.csv",
+covidtotals = pd.read_csv("data/covidtotals.csv",
   parse_dates=['lastdate'])
 covidtotals.set_index("iso_code", inplace=True)
 
-# create a PandasAI object
 llm = OpenAI(api_token="Your API key")
+type(llm)
 
-pandas_ai = PandasAI(llm)
-
-pandas_ai.run(covidtotals, "Show first two rows.").T
-
-pandas_ai.run(covidtotals, "Show column types.")
-
-pandas_ai.run(covidtotals, "Show total cases for locations with the most.")
+covidtotalssdf = SmartDataframe(covidtotals, config={"llm": llm})
+type(covidtotalssdf)
 
 
-pandas_ai.run(covidtotals, "Show total cases pm, total deaths pm, and location for locations with the 10 highest total cases pm.")
+covidtotalssdf.chat("Show me some information about the data")
 
-covidtotalsabb = pandas_ai.run(covidtotals, "Select total cases pm, total deaths pm, and location.")
+covidtotalssdf.chat("Show first five rows.")
+
+covidtotalssdf.chat("Show total cases for locations with the five most total cases.")
+
+covidtotalssdf.chat("Show total cases pm, total deaths pm, and location for locations with the 10 highest total cases pm.")
+
+covidtotalsabb = covidtotalssdf.chat("Select total cases pm, total deaths pm, and location.")
 covidtotalsabb
 
-covidtotalsabb = pandas_ai.run(covidtotals, "Grab total cases pm, total deaths pm, and location.")
+covidtotalsabb = covidtotalssdf.chat("Grab total cases pm, total deaths pm, and location.")
 covidtotalsabb
 
-pandas_ai.run(covidtotals, "Show total cases pm and location where total cases pm greater than 95th percentile.")
+covidtotalssdf.chat("Show total cases pm and location where total cases pm greater than 95th percentile.")
 
-pandas_ai.run(covidtotals, "Show the distribution of total cases pm and total deaths pm.")
+covidtotalssdf.chat("Summarize values for total cases pm and total deaths pm.").T
 
-pandas_ai.run(covidtotals, "Show sum of total cases and total deaths.")
+covidtotalssdf.chat("Show sum of total cases and total deaths by region.")
 
-pandas_ai.run(covidtotals, "Show sum of total cases and total deaths by region.")
+covidtotalssdf.chat("Plot the total_cases_pm column data distribution")
 
-pandas_ai.run(covidtotals, "Plot a histogram of total cases pm")
+covidtotalssdf.chat("Plot the total_cases_pm data distribution")
 
-pandas_ai.run(covidtotals, "Plot total cases pm by total deaths pm")
 
-pandas_ai.run(covidtotals, "Use regplot to show total deaths pm by total cases pm")
+covidtotalssdf.chat( "Plot total cases pm values against total deaths pm values")
 
-pandas_ai.run(covidtotals, "Use regplot to show total deaths pm by total cases pm without extreme values")
+covidtotalssdf.chat( "Plot total cases pm values against total deaths pm values with line")
+
+covidtotalssdf.chat( "Plot total cases pm values against total deaths pm values with lmplot without extreme values")
+
+
+covidtotalssdf.chat("Use regplot to show total deaths pm against total cases pm")
+
+covidtotalssdf.chat("Use regplot to show total deaths pm against total cases pm without extreme values")
+

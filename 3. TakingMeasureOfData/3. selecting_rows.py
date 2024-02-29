@@ -1,6 +1,5 @@
 # import pandas and numpy, and load the nls97 data
 import pandas as pd
-import numpy as np
 pd.set_option('display.width', 75)
 pd.set_option('display.max_columns', 5)
 pd.set_option('display.max_rows', 20)
@@ -10,7 +9,6 @@ nls97.set_index("personid", inplace=True)
 
 # use slicing to select a few rows
 nls97[1000:1004].T
-
 nls97[1000:1004:2].T
 
 # select first 3 rows using head() and Python slicing

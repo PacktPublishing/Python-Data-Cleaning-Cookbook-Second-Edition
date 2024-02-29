@@ -5,19 +5,19 @@ import matplotlib.pyplot as plt
 pd.set_option('display.width', 53)
 pd.set_option('display.max_columns', 5)
 pd.set_option('display.max_rows', 20)
-pd.options.display.float_format = '{:,.2f}'.format
+pd.options.display.float_format = '{:,.1f}'.format
 covidtotals = pd.read_csv("data/covidtotals.csv",
   parse_dates=['lastdate'])
 covidtotals.set_index("iso_code", inplace=True)
 
 # look at a few rows of the covid cases data
 covidtotals.shape
-covidtotals.sample(2, random_state=1).T
+covidtotals.sample(1, random_state=1).T
 covidtotals.dtypes
 
 # get descriptive statistics on the cumulative values
 covidtotals.describe()
-totvars = ['location','total_cases',
+totvars = ['total_cases',
   'total_deaths','total_cases_pm',
   'total_deaths_pm']
 covidtotals[totvars].quantile(np.arange(0.0, 1.1, 0.1))
