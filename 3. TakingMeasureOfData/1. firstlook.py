@@ -5,7 +5,7 @@ pd.set_option('display.max_columns', 5)
 pd.set_option('display.max_rows', 20)
 pd.options.display.float_format = '{:,.0f}'.format
 nls97 = pd.read_csv("data/nls97.csv")
-covidtotals = pd.read_csv("data/covidtotals720.csv",
+covidtotals = pd.read_csv("data/covidtotals.csv",
   parse_dates=['lastdate'])
 
 # Get basic stats on the nls dataset

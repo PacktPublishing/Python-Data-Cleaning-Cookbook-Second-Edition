@@ -1,8 +1,7 @@
 # import pandas and numpy, and load the nls97 data
 import pandas as pd
-import numpy as np
-pd.set_option('display.width', 100)
-pd.set_option('display.max_columns', 20)
+pd.set_option('display.width', 78)
+pd.set_option('display.max_columns', 8)
 pd.set_option('display.max_rows', 15)
 pd.options.display.float_format = '{:,.0f}'.format
 nls97 = pd.read_csv("data/nls97.csv")
@@ -19,10 +18,8 @@ type(analysisdemo)
 analysisdemo.dtypes
 analysisdemo = nls97.loc[:,['gender']]
 type(analysisdemo)
-analysisdemo.dtypes
 analysisdemo = nls97.iloc[:,[0]]
 type(analysisdemo)
-analysisdemo.dtypes
 
 # select multiple columns from a pandas data frame
 analysisdemo = nls97[['gender','maritalstatus',
@@ -49,9 +46,6 @@ analysiswork.info()
 # select multiple columns based on data types
 analysiscats = nls97.select_dtypes(include=["category"])
 analysiscats.info()
-
-analysisnums = nls97.select_dtypes(include=["number"])
-analysisnums.info()
 
 # organize columns
 demo = ['gender','birthmonth','birthyear']

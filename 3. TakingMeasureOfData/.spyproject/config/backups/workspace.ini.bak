@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['6. open_ai.py', '4. counts_categorical.py']
+recent_files = ['4. counts_categorical.py', '5. stats_continuous.py', '6. open_ai.py', 'pandasai.log']
 
 [main]
 version = 0.2.0
