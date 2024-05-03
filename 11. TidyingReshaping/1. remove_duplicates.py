@@ -1,15 +1,17 @@
 # import pandas, numpy, and covid cases daily data
 import pandas as pd
-pd.set_option('display.width', 53)
+pd.set_option('display.width', 62)
 pd.set_option('display.max_columns', 7)
 pd.set_option('display.max_rows', 200)
 pd.options.display.float_format = '{:,.0f}'.format
-covidcases = pd.read_csv("data/covidcases720.csv")
+covidcases = pd.read_csv("data/covidcases.csv")
 
 # create lists for daily cases, for cumulative columns and for demographic columns
 dailyvars = ['casedate','new_cases','new_deaths']
 totvars = ['location','total_cases','total_deaths']
 
+
+covidcases.head(2).T
 
 demovars = ['population','population_density',
   'median_age','gdp_per_capita',
@@ -23,7 +25,8 @@ coviddaily.head()
 
 # select one row per country
 covidcases.location.nunique()
-coviddemo = covidcases[['casedate'] + totvars + demovars].\
+coviddemo = \
+  covidcases[['casedate'] + totvars + demovars].\
   sort_values(['location','casedate']).\
   drop_duplicates(['location'], keep='last').\
   rename(columns={'casedate':'lastdate'})

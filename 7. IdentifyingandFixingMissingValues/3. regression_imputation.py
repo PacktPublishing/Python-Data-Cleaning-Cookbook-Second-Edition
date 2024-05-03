@@ -2,32 +2,42 @@
 import pandas as pd
 import numpy as np
 import statsmodels.api as sm
-pd.set_option('display.width', 200)
-pd.set_option('display.max_columns', 15)
+pd.set_option('display.width', 74)
+pd.set_option('display.max_columns', 7)
 pd.set_option('display.max_rows', 200)
 pd.options.display.float_format = '{:,.2f}'.format
-nls97 = pd.read_csv("data/nls97b.csv")
+nls97 = pd.read_csv("data/nls97g.csv", low_memory=False)
 nls97.set_index("personid", inplace=True)
 
 # check correlations with wageincome
 
-nls97[['wageincome','highestdegree','weeksworked16','parentincome']].info()
+nls97[['wageincome20','highestdegree','weeksworked20','parentincome']].info()
 nls97['hdegnum'] = nls97.highestdegree.str[0:1].astype('float')
 nls97.groupby(['highestdegree','hdegnum']).size()
 nls97.parentincome.replace(list(range(-5,0)), np.nan, inplace=True)
-nls97[['wageincome','hdegnum','weeksworked16','parentincome']].corr()
+nls97[['wageincome20','hdegnum','weeksworked20','parentincome']].corr()
 
 # check to see if folks with missing wage income data are different
-nls97['missingwageincome'] = np.where(nls97.wageincome.isnull(),1,0)
-nls97.groupby(['missingwageincome'])[['hdegnum','parentincome',\
-  'weeksworked16']].agg(['mean','count'])
+# nls97.wageincome20.describe()
+#nls97.loc[nls97.weeksworked20==0,'wageincome20'] = 0
+nls97weeksworked = nls97.loc[nls97.weeksworked20>0]
+nls97weeksworked.shape
+nls97weeksworked['missingwageincome'] = \
+  np.where(nls97weeksworked.wageincome20.isnull(),1,0)
+nls97weeksworked.groupby(['missingwageincome'])[['hdegnum',
+  'parentincome','weeksworked20']].\
+  agg(['mean','count'])
 
 # prepare data to run regression
-nls97.weeksworked16.fillna(nls97.weeksworked16.mean(), inplace=True)
-nls97.parentincome.fillna(nls97.parentincome.mean(), inplace=True)
-nls97['degltcol'] = np.where(nls97.hdegnum<=2,1,0)
-nls97['degcol'] = np.where(nls97.hdegnum.between(3,4),1,0)
-nls97['degadv'] = np.where(nls97.hdegnum>4,1,0)
+#nls97.weeksworked20.fillna(nls97.weeksworked20.mean(), inplace=True)
+nls97weeksworked.parentincome. \
+  fillna(nls97weeksworked.parentincome.mean(), inplace=True)
+nls97weeksworked['degltcol'] = \
+  np.where(nls97weeksworked.hdegnum<=2,1,0)
+nls97weeksworked['degcol'] = \
+  np.where(nls97weeksworked.hdegnum.between(3,4),1,0)
+nls97weeksworked['degadv'] = \
+  np.where(nls97weeksworked.hdegnum>4,1,0)
 
 # fit a linear regression model
 # return the influence of each observation
@@ -43,28 +53,43 @@ def getlm(df, ycolname, xcolnames):
     'pvalues'])
   return coefficients, lm
 
-xvars = ['weeksworked16','parentincome','degcol','degadv']
-coefficients, lm = getlm(nls97, 'wageincome', xvars)
+#nls97 = nls97.loc[nls97.weeksworked20>0]
+xvars = ['weeksworked20','parentincome','degcol','degadv']
+coefficients, lm = getlm(nls97weeksworked, 'wageincome20', xvars)
 coefficients
 
+nls97weeksworked.dtypes
+
 # generate predictions
-pred = lm.predict(sm.add_constant(nls97[xvars])).\
+pred = lm.predict(sm.add_constant(nls97weeksworked[xvars])).\
   to_frame().rename(columns= {0: 'pred'})
-nls97 = nls97.join(pred)
-nls97['wageincomeimp'] = np.where(nls97.wageincome.isnull(),\
-  nls97.pred, nls97.wageincome)
+nls97weeksworked = nls97weeksworked.join(pred)
+
+nls97weeksworked['wageincomeimp'] = \
+  np.where(nls97weeksworked.wageincome20.isnull(),\
+  nls97weeksworked.pred, nls97weeksworked.wageincome20)
 pd.options.display.float_format = '{:,.0f}'.format
-nls97[['wageincomeimp','wageincome'] + xvars].head(10)
-nls97[['wageincomeimp','wageincome']].\
+nls97weeksworked[['wageincomeimp','wageincome20'] + xvars].\
+  sample(10, random_state=7)
+nls97weeksworked[['wageincomeimp','wageincome20']].\
   agg(['count','mean','std'])
 
 # add an error term
-randomadd = np.random.normal(0, lm.resid.std(), nls97.shape[0])
-randomadddf = pd.DataFrame(randomadd, columns=['randomadd'], index=nls97.index)
-nls97 = nls97.join(randomadddf)
-nls97['stochasticpred'] = nls97.pred + nls97.randomadd
-nls97['wageincomeimpstoc'] = np.where(nls97.wageincome.isnull(),\
-  nls97.stochasticpred, nls97.wageincome)
+np.random.seed(0)
+randomadd = np.random.normal(0, lm.resid.std(), 
+   nls97weeksworked.shape[0])
+randomadddf = pd.DataFrame(randomadd, columns=['randomadd'],
+   index=nls97weeksworked.index)
+nls97weeksworked = nls97weeksworked.join(randomadddf)
+nls97weeksworked['stochasticpred'] = \
+   nls97weeksworked.pred + nls97weeksworked.randomadd
+
+nls97weeksworked['wageincomeimpstoc'] = \
+  np.where(nls97weeksworked.wageincome20.isnull(),
+  nls97weeksworked.stochasticpred, nls97weeksworked.wageincome20)
+
+nls97weeksworked[['wageincomeimpstoc','wageincome20']].\
+  agg(['count','mean','std'])
 
 
-
+#nls97weeksworked = nls97weeksworked.drop(columns=['randomadd','stochasticpred','wageincomeimpstoc'], axis=1)

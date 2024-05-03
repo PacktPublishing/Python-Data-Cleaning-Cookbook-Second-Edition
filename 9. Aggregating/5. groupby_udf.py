@@ -1,11 +1,10 @@
 # import pandas and numpy, and load the nls data
 import pandas as pd
-import numpy as np
 pd.set_option('display.width', 53)
 pd.set_option('display.max_columns', 7)
 pd.set_option('display.max_rows', 200)
 pd.options.display.float_format = '{:,.1f}'.format
-nls97 = pd.read_csv("data/nls97b.csv")
+nls97 = pd.read_csv("data/nls97g.csv", low_memory=False)
 nls97.set_index("personid", inplace=True)
 
 # create a function for calculating interquartile range
@@ -23,19 +22,21 @@ def gettots(x):
   out['med'] = x.median()
   out['qr3'] = x.quantile(0.75)
   out['count'] = x.count()
-  return pd.Series(out)
+  return out
 
 # use apply to run the function
 pd.options.display.float_format = '{:,.0f}'.format
-nls97.groupby(['highestdegree'])['weeksworked06'].apply(gettots)
+nls97.groupby(['highestdegree'])['weeksworked06'].\
+  apply(gettots)
+  
 
 # chain reset_index to set the default index
-nls97.groupby(['highestdegree'])['weeksworked06'].apply(gettots).reset_index()
+nls97.groupby(['highestdegree'])['weeksworked06'].\
+  apply(gettots).reset_index()
 
 # allow the index to be created
-nlssums = nls97.groupby(['highestdegree'])['weeksworked06'].apply(gettots).unstack()
+nlssums = nls97.groupby(['highestdegree'])\
+  ['weeksworked06'].apply(gettots).unstack()
 nlssums
 nlssums.info()
 
-# run the groupby without creating an index and create a data frame
-nls97.groupby(['highestdegree'], as_index=False)['weeksworked06'].apply(gettots)

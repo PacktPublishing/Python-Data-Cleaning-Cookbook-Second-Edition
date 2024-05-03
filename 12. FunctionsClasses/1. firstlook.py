@@ -2,17 +2,16 @@
 import pandas as pd
 import os
 import sys
-nls97 = pd.read_csv("data/nls97f.csv")
+nls97 = pd.read_csv("data/nls97g.csv", low_memory=False)
 nls97.set_index('personid', inplace=True)
 
 # import the basicdescriptives module
 sys.path.append(os.getcwd() + "/helperfunctions")
 import basicdescriptives as bd
-# import importlib
-# importlib.reload(bd)
-pd.set_option('display.width', 75)
-pd.set_option('display.max_columns', 5)
-pd.set_option('display.max_rows', 15)
+
+pd.set_option('display.width', 64)
+pd.set_option('display.max_columns', 7)
+pd.set_option('display.max_rows', 50)
 
 # take a first look at the NLS data
 dfinfo = bd.getfirstlook(nls97)

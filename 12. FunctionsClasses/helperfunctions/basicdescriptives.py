@@ -34,7 +34,9 @@ def gettots(df):
 # count missings by columns and rows
 def getmissings(df, byrowperc=False):
   return df.isnull().sum(),\
-    df.isnull().sum(axis=1).value_counts(normalize=byrowperc).sort_index()
+    df.isnull().sum(axis=1).\
+    value_counts(normalize=byrowperc).\
+    sort_index()
 
 # do frequencies and percentages for all category variables in data frame
 def makefreqs(df, outfile):
@@ -55,9 +57,9 @@ def makefreqs(df, outfile):
 # get counts by groupings
 def getcnts(df, cats, rowsel=None):
   tots = cats[:-1]
-  catcnt = df.groupby(cats).size().\
+  catcnt = df.groupby(cats, dropna=False).size().\
     reset_index(name='catcnt')
-  totcnt = df.groupby(tots).size().\
+  totcnt = df.groupby(tots, dropna=False).size().\
     reset_index(name='totcnt')
   percs = pd.merge(catcnt, totcnt, left_on=tots, 
     right_on=tots, how="left")

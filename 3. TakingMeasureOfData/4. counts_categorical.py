@@ -9,7 +9,7 @@ nls97.set_index("personid", inplace=True)
 
 nls97[nls97.select_dtypes(['object']).columns] = \
   nls97.select_dtypes(['object']). \
-  apply(lambda x: x.astype('category'))
+  transform(lambda x: x.astype('category'))
 
 # show the names of columns with category data type and check for number of missings
 catcols = nls97.select_dtypes(include=["category"]).columns
@@ -46,5 +46,3 @@ for col in nls97.\
 
 freqout.close()
 
-
-pd.__version__

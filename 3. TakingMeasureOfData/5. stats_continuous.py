@@ -20,7 +20,8 @@ covidtotals.describe()
 totvars = ['total_cases',
   'total_deaths','total_cases_pm',
   'total_deaths_pm']
-covidtotals[totvars].quantile(np.arange(0.0, 1.1, 0.1))
+covidtotals[totvars].\
+  quantile(np.arange(0.0, 1.1, 0.1))
 
 # view the distribution of total cases
 plt.hist(covidtotals['total_cases']/1000, bins=12)

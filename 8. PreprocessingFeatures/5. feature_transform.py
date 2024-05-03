@@ -12,7 +12,7 @@ pd.options.display.float_format = '{:,.0f}'.format
 covidtotals = pd.read_csv("data/covidtotals.csv")
 
 feature_cols = ['location','population',
-    'aged_65_older','diabetes_prevalence','region']
+    'aged_65_older','life_expectancy','region']
 covidtotals = covidtotals[['total_cases'] + feature_cols].dropna()
 
 # separate into train and test sets
@@ -45,6 +45,7 @@ tf = vt.BoxCoxTransformer(variables = ['total_cases'])
 y_train_tf = tf.fit_transform(y_train)
 
 y_train_tf.total_cases.skew()
+
 plt.hist(y_train_tf.total_cases)
 plt.title("Total Covid Cases (Box Cox transformation)")
 plt.xlabel('Cases')

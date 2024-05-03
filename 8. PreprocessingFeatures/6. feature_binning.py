@@ -12,7 +12,7 @@ pd.options.display.float_format = '{:,.3f}'.format
 covidtotals = pd.read_csv("data/covidtotals.csv")
 
 feature_cols = ['location','population',
-    'aged_65_older','diabetes_prevalence','region']
+    'aged_65_older','life_expectancy','region']
 covidtotals = covidtotals[['total_cases'] + feature_cols].dropna()
 
 # Separate into train and test sets
@@ -21,8 +21,11 @@ X_train, X_test, y_train, y_test =  \
   covidtotals[['total_cases']], test_size=0.3, random_state=0)
 
 # use qcut for bins
-y_train['total_cases_group'] = pd.qcut(y_train.total_cases, q=10, labels=[0,1,2,3,4,5,6,7,8,9])
-y_train.total_cases_group.value_counts().sort_index()
+y_train['total_cases_group'] = \
+  pd.qcut(y_train.total_cases, q=10, 
+  labels=[0,1,2,3,4,5,6,7,8,9])
+y_train.total_cases_group.value_counts().\
+  sort_index()
 
 # set up function to run the transform
 def runtransform(bt, dftrain, dftest):
@@ -46,15 +49,22 @@ pd.options.display.float_format = '{:,.0f}'.format
 y_train_bins = y_train_bins.\
   rename(columns={'total_cases':'total_cases_group'}).\
   join(y_train)
-y_train_bins.groupby("total_cases_group")["total_cases"].agg(['min','max'])
+y_train_bins.groupby("total_cases_group")["total_cases"].\
+  agg(['min','max'])
 
 # use k means clustering
-kbins = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy='kmeans')
+kbins = KBinsDiscretizer(n_bins=10, encode='ordinal',
+  strategy='kmeans', subsample=None)
 y_train_bins = \
   pd.DataFrame(kbins.fit_transform(y_train),
-  columns=['total_cases'])
+  columns=['total_cases'], index=y_train.index)
 y_train_bins.total_cases.value_counts().sort_index()
 
 
 y_train.total_cases.agg(['skew','kurtosis'])
 y_train_bins.total_cases.agg(['skew','kurtosis'])
+
+y_train_bins.rename(columns={'total_cases':'total_cases_bin'}, inplace=True)
+y_train.join(y_train_bins).\
+  groupby(['total_cases_bin'])['total_cases'].\
+  agg(['min','max','size'])

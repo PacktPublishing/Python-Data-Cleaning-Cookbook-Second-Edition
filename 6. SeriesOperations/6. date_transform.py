@@ -6,18 +6,21 @@ pd.set_option('display.width', 200)
 pd.set_option('display.max_columns', 35)
 pd.set_option('display.max_rows', 220)
 pd.options.display.float_format = '{:,.0f}'.format
-covidcases = pd.read_csv("data/covidcases720.csv")
+covidcases = pd.read_csv("data/covidcases.csv")
 nls97 = pd.read_csv("data/nls97c.csv")
 nls97.set_index("personid", inplace=True)
 
 # show the birth month and year values
 nls97[['birthmonth','birthyear']].isnull().sum()
-nls97.birthmonth.value_counts().sort_index()
+nls97.birthmonth.value_counts(dropna=False).\
+  sort_index()
 nls97.birthyear.value_counts().sort_index()
 
 # use fillna to fix missing value
-nls97.birthmonth.fillna(int(nls97.birthmonth.mean()), inplace=True)
-nls97.birthmonth.value_counts().sort_index()
+nls97.fillna({"birthmonth":\
+ int(nls97.birthmonth.mean())}, inplace=True)
+nls97.birthmonth.value_counts(dropna=False).\
+ sort_index()
 
 # use month and date integers to create a datetime column
 nls97['birthdate'] = pd.to_datetime(dict(year=nls97.birthyear, month=nls97.birthmonth, day=15))
@@ -32,12 +35,13 @@ def calcage(startdate, enddate):
   return age
 
 # calculate age
-rundate = pd.to_datetime('2020-07-20')
+rundate = pd.to_datetime('2024-03-01')
 nls97["age"] = nls97.apply(lambda x: calcage(x.birthdate, rundate), axis=1)
 nls97.loc[100061:100583, ['age','birthdate']]
 
 nls97["age2"] = nls97.\
-  apply(lambda x: relativedelta(rundate, x.birthdate).years,
+  apply(lambda x: relativedelta(rundate, 
+    x.birthdate).years,
     axis=1)
 (nls97['age']!=nls97['age2']).sum()
 nls97.groupby(['age','age2']).size()
@@ -49,6 +53,7 @@ covidcases['casedate'] = pd.to_datetime(covidcases.casedate, format='%Y-%m-%d')
 covidcases.iloc[:, 0:6].dtypes
 
 # get descriptive statistics on datetime column
+covidcases.casedate.nunique()
 covidcases.casedate.describe()
 
 # calculate days since first case by country
@@ -59,27 +64,4 @@ firstcase = covidcases.loc[covidcases.new_cases>0,['location','casedate']].\
 covidcases = pd.merge(covidcases, firstcase, left_on=['location'], right_on=['location'], how="left")
 covidcases['dayssincefirstcase'] = covidcases.casedate - covidcases.firstcasedate
 covidcases.dayssincefirstcase.describe()
-
-temp = covidcases.\
-  sort_values(['location','casedate']).\
-  drop_duplicates(['location'], keep='first').\
-  rename(columns={'casedate':'firstcasedate'})
-
-temp
-
-covidcases
-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
-
-llm = OpenAI(api_token="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")
-pandas_ai = PandasAI(llm)
-
-pandas_ai.run(covidtotals, "Show column types.")
-
-
-from pandasai.llm import OpenAI
-llm = OpenAI(api_token="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")
-
-sdf = SmartDataframe(covidcases, config={"llm": llm})
-sdf.chat("Show first casedate and other values for each country.")
-
 

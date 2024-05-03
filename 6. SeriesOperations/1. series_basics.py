@@ -1,10 +1,10 @@
 # import pandas and load nls data
 import pandas as pd
-pd.set_option('display.width', 78)
-pd.set_option('display.max_columns', 7)
+pd.set_option('display.width', 62)
+pd.set_option('display.max_columns', 4)
 pd.set_option('display.max_rows', 200)
 pd.options.display.float_format = '{:,.2f}'.format
-nls97 = pd.read_csv("data/nls97b.csv")
+nls97 = pd.read_csv("data/nls97f.csv", low_memory=False)
 nls97.set_index("personid", inplace=True)
 
 # create a series from the GPA column
@@ -20,10 +20,10 @@ gpaoverall.tail()
 gpaoverall[-5:]
 
 # select values using loc
-gpaoverall.loc[100061]
-gpaoverall.loc[[100061]]
-gpaoverall.loc[[100061,100139,100284]]
-gpaoverall.loc[100061:100833]
+gpaoverall.loc[135335]
+gpaoverall.loc[[135335]]
+gpaoverall.loc[[135335,999406,151672]]
+gpaoverall.loc[135335:151672]
 
 # select values using iloc
 gpaoverall.iloc[[0]]

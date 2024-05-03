@@ -5,7 +5,7 @@ pd.set_option('display.width', 53)
 pd.set_option('display.max_columns', 5)
 pd.set_option('display.max_rows', 200)
 pd.options.display.float_format = '{:,.0f}'.format
-nls97 = pd.read_csv("data/nls97.csv")
+nls97 = pd.read_csv("data/nls97f.csv", low_memory=False)
 nls97.set_index("personid", inplace=True)
 covidtotals = pd.read_csv("data/covidtotals.csv", parse_dates=["lastdate"])
 covidtotals.set_index("iso_code", inplace=True)
@@ -24,13 +24,13 @@ plt.show()
 
 # show some descriptives on weeks worked
 weeksworked = nls97.loc[:, ['highestdegree',
-  'weeksworked16','weeksworked17']]
+  'weeksworked20','weeksworked21']]
 weeksworked.describe()
 
-# do a box plot of weeks worked in 2016 and 2017
-plt.boxplot([weeksworked.weeksworked16.dropna(),
-  weeksworked.weeksworked17.dropna()],
-  labels=['Weeks Worked 2016','Weeks Worked 2017'])
+# do a box plot of weeks worked in 2020 and 2021
+plt.boxplot([weeksworked.weeksworked20.dropna(),
+  weeksworked.weeksworked21.dropna()],
+  labels=['Weeks Worked 2020','Weeks Worked 2021'])
 plt.title("Boxplots of Weeks Worked")
 plt.tight_layout()
 plt.show()
@@ -52,14 +52,14 @@ plt.tight_layout()
 plt.show()
 
 # show boxplots as separate sub plots on one figure
-fig, axes = plt.subplots(2, 2,)
-fig.suptitle("Boxplots of Covid Cases and Deaths")
+fig, axes = plt.subplots(2, 2)
+fig.suptitle("Boxplots of Covid Cases and Deaths in Thousands")
 axes = axes.ravel()
 
 for j, ax in enumerate(axes):
-  ax.boxplot(covidtotalsonly.iloc[:, j], labels=[totvarslabels[j]])
+  ax.boxplot(covidtotalsonly.iloc[:, j]/1000, labels=[totvarslabels[j]])
 
 plt.tight_layout()
-fig.subplots_adjust(top=0.94)
+fig.subplots_adjust(top=0.9)
 plt.show()
 

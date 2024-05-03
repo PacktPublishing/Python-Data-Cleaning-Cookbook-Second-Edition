@@ -3,8 +3,8 @@ import pandas as pd
 pd.set_option('display.width', 53)
 pd.set_option('display.max_columns', 9)
 pd.set_option('display.max_rows', 30)
-pd.options.display.float_format = '{:,.1f}'.format
-nls97 = pd.read_csv("data/nls97b.csv")
+pd.options.display.float_format = '{:,.0f}'.format
+nls97 = pd.read_csv("data/nls97g.csv", low_memory=False)
 nls97.set_index("personid", inplace=True)
 
 # review the structure of the nls97 data
@@ -14,7 +14,7 @@ nls97.iloc[:,0:7].info()
 catvars = ['gender','maritalstatus','highestdegree']
 
 for col in catvars:
-  print(col, nls97[col].value_counts().\
+  print(nls97[col].value_counts().\
     sort_index(), sep="\n\n", end="\n\n\n")
 
 
@@ -28,13 +28,15 @@ nls97[contvars].describe()
 nls97.groupby('gender')['satmath'].mean()
 
 # look at sat math scores by gender and highest degree earned
-nls97.groupby(['gender','highestdegree'])['satmath'].mean()
+nls97.groupby(['gender','highestdegree'])['satmath'].\
+  mean()
 
 # look at sat math and verbal scores by gender and highest degree earned
 nls97.groupby(['gender','highestdegree'])[['satmath','satverbal']].mean()
 
 # add max and standard deviations
-nls97.groupby(['gender','highestdegree'])['gpaoverall'].agg(['count','mean','max','std'])
+nls97.groupby(['gender','highestdegree'])\
+  ['gpaoverall'].agg(['count','mean','max','std'])
 
 # use a dictionary for more complicated aggregations
 pd.options.display.float_format = '{:,.1f}'.format
@@ -43,3 +45,4 @@ aggdict = {'weeksworked06':['count', 'mean',
  'max', 'std']}
 nls97.groupby(['highestdegree']).agg(aggdict)
 nls97.groupby(['maritalstatus']).agg(aggdict)
+

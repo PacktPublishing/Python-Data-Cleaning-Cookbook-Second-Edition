@@ -11,16 +11,17 @@ import combineagg as ca
 pd.set_option('display.width', 150)
 pd.set_option('display.max_columns', 15)
 pd.set_option('display.max_rows', 20)
+pd.options.display.float_format = '{:,.0f}'.format
 
 # load the data frames
-coviddaily = pd.read_csv("data/coviddaily720.csv")
+coviddaily = pd.read_csv("data/coviddaily.csv")
 ltbrazil = pd.read_csv("data/ltbrazil.csv")
 countries = pd.read_csv("data/ltcountries.csv")
 locations = pd.read_csv("data/ltlocations.csv")
 
 # summarize panel data by group and time period, with exclusions
 ca.adjmeans(coviddaily, 'location','new_cases','casedate')
-ca.adjmeans(coviddaily, 'location','new_cases','casedate', 150)
+ca.adjmeans(coviddaily, 'location','new_cases','casedate', 5000)
 
 # check matches of merge-by values across data frames
 ca.checkmerge(countries.copy(), locations.copy(),\
