@@ -40,6 +40,6 @@ len(analysislist)
 pprint.pprint(analysislist[0:1])
 analysis = pd.DataFrame(analysislist)
 analysis.birthyearsall.value_counts().head()
-analysis.head(2)
+analysis.head(2).T
 
 

@@ -2,14 +2,15 @@
 import pandas as pd
 import feature_engine.selection as fesel
 from sklearn.model_selection import train_test_split
-pd.set_option('display.width', 80)
-pd.set_option('display.max_columns', 8)
+pd.set_option('display.width', 62)
+pd.set_option('display.max_columns', 7)
 pd.set_option('display.max_rows', 25)
 pd.options.display.float_format = '{:,.0f}'.format
-nls97 = pd.read_csv("data/nls97b.csv")
+nls97 = pd.read_csv("data/nls97g.csv", low_memory=False)
 nls97.set_index("personid", inplace=True)
 ltpoland = pd.read_csv("data/ltpoland.csv")
 ltpoland.set_index("station", inplace=True)
+
 ltpoland.dropna(inplace=True)
 
 feature_cols = ['satverbal','satmath','gpascience',
@@ -18,7 +19,7 @@ feature_cols = ['satverbal','satmath','gpascience',
 # separate NLS data into train and test datasets
 X_train, X_test, y_train, y_test =  \
   train_test_split(nls97[feature_cols],\
-  nls97[['wageincome']], test_size=0.3, random_state=0)
+  nls97[['wageincome20']], test_size=0.3, random_state=0)
 
 # remove a feature highly correlated with another
 X_train.corr()
@@ -53,3 +54,4 @@ tr.fit(X_train_tr)
 X_train_tr = tr.transform(X_train_tr)
 X_train_tr.head()
 
+fesel.__version__

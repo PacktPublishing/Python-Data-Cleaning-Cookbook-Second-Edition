@@ -8,7 +8,7 @@ nls97 = pd.read_csv("data/nls97.csv")
 nls97.set_index("personid", inplace=True)
 nls97.loc[:, nls97.dtypes == 'object'] = \
   nls97.select_dtypes(['object']). \
-  apply(lambda x: x.astype('category'))
+  transform(lambda x: x.astype('category'))
 
 # select a column using the pandas index operator
 analysisdemo = nls97['gender']

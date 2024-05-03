@@ -7,7 +7,7 @@ pd.set_option('display.width', 53)
 pd.set_option('display.max_columns', 6)
 pd.set_option('display.max_rows', 200)
 pd.options.display.float_format = '{:,.0f}'.format
-landtemps = pd.read_csv("data/landtemps2019avgs.csv")
+landtemps = pd.read_csv("data/landtemps2023avgs.csv")
 covidtotals = pd.read_csv("data/covidtotals.csv", parse_dates=["lastdate"])
 covidtotals.set_index("iso_code", inplace=True)
 
@@ -54,7 +54,6 @@ plt.hist([getcases(k) for k in showregions],\
 plt.title("Stacked Histogram of Cases Per Million for Selected Regions")
 plt.xlabel("Cases Per Million")
 plt.ylabel("Frequency")
-plt.xticks(np.arange(0, 22500, step=2500))
 plt.legend()
 plt.show()
 
@@ -65,7 +64,7 @@ axes = axes.ravel()
 
 for j, ax in enumerate(axes):
   ax.hist(covidtotals.loc[covidtotals.region==showregions[j]].\
-    total_cases_pm, bins=5)
+    total_cases_pm, bins=7)
   ax.set_title(showregions[j], fontsize=10)
   for tick in ax.get_xticklabels():
     tick.set_rotation(45)

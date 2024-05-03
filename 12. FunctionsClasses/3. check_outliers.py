@@ -3,9 +3,9 @@ import pandas as pd
 import os
 import sys
 import pprint
-nls97 = pd.read_csv("data/nls97f.csv")
+nls97 = pd.read_csv("data/nls97g.csv", low_memory=False)
 nls97.set_index('personid', inplace=True)
-covidtotals = pd.read_csv("data/covidtotals720.csv")
+covidtotals = pd.read_csv("data/covidtotals.csv")
 
 # import the outliers module
 sys.path.append(os.getcwd() + "/helperfunctions")
@@ -21,12 +21,12 @@ dist = ol.getdistprops(covidtotals.total_cases_pm)
 pprint.pprint(dist)
 
 # show outlier rows
-sumvars = ['satmath','wageincome']
+sumvars = ['satmath','wageincome20']
 othervars = ['originalid','highestdegree','gender','maritalstatus']
 outliers = ol.getoutliers(nls97, sumvars, othervars)
 outliers.varname.value_counts(sort=False)
 outliers.loc[outliers.varname=='satmath', othervars + sumvars]
-outliers.to_excel("views/nlsoutliers.xlsx")
+outliers.to_excel("views/nlsoutliers.xls")
 
 # do histogram or boxplot of a series
 ol.makeplot(nls97.satmath, "Histogram of SAT Math", "SAT Math")

@@ -1,10 +1,10 @@
 # import pandas and numpy, and load the covid data
 import pandas as pd
-pd.set_option('display.width', 200)
-pd.set_option('display.max_columns', 35)
+pd.set_option('display.width', 68)
+pd.set_option('display.max_columns', 7)
 pd.set_option('display.max_rows', 200)
-pd.options.display.float_format = '{:,.2f}'.format
-coviddaily = pd.read_csv("data/coviddaily720.csv", parse_dates=["casedate"])
+pd.options.display.float_format = '{:,.0f}'.format
+coviddaily = pd.read_csv("data/coviddaily.csv", parse_dates=["casedate"])
 ltbrazil = pd.read_csv("data/ltbrazil.csv")
 
 # create a list of locations

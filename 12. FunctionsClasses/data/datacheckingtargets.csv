@@ -1,0 +1,17 @@
+varname,type,categories,range,missingthreshold,skewtarget,kurtosistarget,showoutliers,include
+maritalstatus,categorical,Divorced|Married|Never-married|Separated|Widowed,,0.2,,,,Y
+colenroct21,categorical,1. Not enrolled|2. 2-year college|3. 4-year college|4. Graduate program,,0.2,,,,N
+personid,unique,      ,,,,,,N
+originalid,unique,,,,,,,Y
+birthyear,numeric,,1980|1984,0.3,0,0,N,N
+highestgradecompleted,numeric,,5|16,0.3,0,3,N,Y
+childathome,numeric,,0|7,0.3,0,3,Y,N
+childnotathome,numeric,,0|7,0.3,0,3,N,N
+satverbal,numeric,,200|800,0.3,0,3,N,N
+satmath,numeric,,200|800,0.3,0,3,N,N
+gpaoverall,numeric,,100|400,0.3,0,3,N,Y
+gpaenglish,numeric,,100|400,0.3,0,3,N,N
+gpamath,numeric,,100|400,0.3,0,3,N,N
+gpascience,numeric,,100|400,0.3,0,3,N,N
+weeksworked21,numeric,,0|52,0.3,0,3,N,N
+nightlyhrssleep,numeric,,3|9,0.3,0,3,Y,Y

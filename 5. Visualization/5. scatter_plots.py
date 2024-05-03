@@ -8,15 +8,17 @@ pd.set_option('display.width', 53)
 pd.set_option('display.max_columns', 5)
 pd.set_option('display.max_rows', 200)
 pd.options.display.float_format = '{:,.0f}'.format
-landtemps = pd.read_csv("data/landtemps2019avgs.csv")
+landtemps = pd.read_csv("data/landtemps2023avgs.csv")
 
 # run a scatter plot latitude by avgtemp
 plt.scatter(x="latabs", y="avgtemp", data=landtemps)
 plt.xlabel("Latitude (N or S)")
 plt.ylabel("Average Temperature (Celsius)")
 plt.yticks(np.arange(-60, 40, step=20))
-plt.title("Latitude and Average Temperature in 2019")
+plt.title("Latitude and Average Temperature in 2023")
 plt.show()
+
+landtemps.shape
 
 # show the high elevation points in a different color
 low, high = landtemps.loc[landtemps.elevation<=1000], landtemps.loc[landtemps.elevation>1000]
@@ -25,13 +27,12 @@ plt.scatter(x="latabs", y="avgtemp", c="red", data=high)
 plt.legend(('low elevation', 'high elevation'))
 plt.xlabel("Latitude (N or S)")
 plt.ylabel("Average Temperature (Celsius)")
-plt.title("Latitude and Average Temperature in 2019")
+plt.title("Latitude and Average Temperature in 2023")
 plt.show()
 
 # show this as a 3D plot
 fig = plt.figure()
-plt.suptitle("Latitude, Temperature, and Elevation in 2019")
-ax.set_title('Three D')
+plt.suptitle("Latitude, Temperature, and Elevation in 2023")
 ax = plt.axes(projection='3d')
 ax.set_xlabel("Elevation")
 ax.set_ylabel("Latitude")
@@ -43,20 +44,18 @@ plt.show()
 
 # show scatter plot with a regression line
 sns.regplot(x="latabs", y="avgtemp", color="blue", data=landtemps)
-plt.title("Latitude and Average Temperature in 2019")
+plt.title("Latitude and Average Temperature in 2023")
 plt.xlabel("Latitude (N or S)")
 plt.ylabel("Average Temperature")
 plt.show()
 
 # show scatter plot with different regression lines by elevation group
-landtemps['elevation_group'] = np.where(landtemps.elevation<=1000,'low','high')
-sns.lmplot(x="latabs", y="avgtemp", hue="elevation_group", palette=dict(low="blue", high="red"), legend_out=False, data=landtemps)
+landtemps['elevation'] = np.where(landtemps.elevation<=1000,'low','high')
+sns.lmplot(x="latabs", y="avgtemp", hue="elevation", palette=dict(low="blue", high="red"),  facet_kws=dict(legend_out=False), data=landtemps)
 plt.xlabel("Latitude (N or S)")
 plt.ylabel("Average Temperature")
-plt.legend(('low elevation', 'high elevation'), loc='lower left')
 plt.yticks(np.arange(-60, 40, step=20))
-plt.title("Latitude and Average Temperature in 2019")
-plt.tight_layout()
+plt.title("Latitude and Average Temperature in 2023")
 plt.show()
 
 # check some average temperatures above the regression lines

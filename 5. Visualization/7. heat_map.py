@@ -1,6 +1,5 @@
 # import pandas, numpy, and matplotlib
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 pd.set_option('display.width', 53)
@@ -10,15 +9,14 @@ pd.options.display.float_format = '{:,.2f}'.format
 covidtotals = pd.read_csv("data/covidtotals.csv", parse_dates=["lastdate"])
 
 # generate a correlation matrix
-
-corr = covidtotals.corr()
+corr = covidtotals.corr(numeric_only=True)
 corr[['total_cases','total_deaths',
   'total_cases_pm','total_deaths_pm']]
 
 # show scatter plots
 fig, axes = plt.subplots(1,2, sharey=True)
-sns.regplot(covidtotals.median_age, covidtotals.total_cases_pm, ax=axes[0])
-sns.regplot(covidtotals.gdp_per_capita, covidtotals.total_cases_pm, ax=axes[1])
+sns.regplot(x="median_age", y="total_cases_pm", data=covidtotals, ax=axes[0])
+sns.regplot(x="gdp_per_capita", y="total_cases_pm", data=covidtotals, ax=axes[1])
 axes[0].set_xlabel("Median Age")
 axes[0].set_ylabel("Cases Per Million")
 axes[1].set_xlabel("GDP Per Capita")

@@ -9,12 +9,14 @@ sys.path.append(os.getcwd() + "/helperfunctions")
 import respondent as rp
 # import importlib
 # importlib.reload(rp)
+
+
 pd.set_option('display.width', 150)
 pd.set_option('display.max_columns', 15)
 pd.set_option('display.max_rows', 100)
 
 # load the NLS data and then create a list of dictionaries
-nls97 = pd.read_csv("data/nls97f.csv")
+nls97 = pd.read_csv("data/nls97g.csv", low_memory=False)
 nls97list = nls97.to_dict('records')
 nls97.shape
 len(nls97list)

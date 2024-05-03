@@ -25,7 +25,7 @@ nls97spss.dtypes
 nls97spss.columns = nls97spss.columns.\
     str.lower().\
     str.replace(' ','_').\
-    str.replace('[^a-z0-9_]', '')
+    str.replace('[^a-z0-9_]', '', regex=True)
 nls97spss.set_index('pubid__yth_id_code_1997', inplace=True)
 
 # apply the formats from the beginning
@@ -34,7 +34,7 @@ nls97spss.columns = metaspss.column_labels
 nls97spss.columns = nls97spss.columns.\
   str.lower().\
   str.replace(' ','_').\
-  str.replace('[^a-z0-9_]', '')
+  str.replace('[^a-z0-9_]', '', regex=True)
 nls97spss.dtypes
 nls97spss.head()
 nls97spss.govt_responsibility__provide_jobs_2006.\
@@ -47,7 +47,7 @@ nls97stata.columns = metastata.column_labels
 nls97stata.columns = nls97stata.columns.\
     str.lower().\
     str.replace(' ','_').\
-    str.replace('[^a-z0-9_]', '')
+    str.replace('[^a-z0-9_]', '', regex=True)
 nls97stata.dtypes
 nls97stata.head()
 nls97stata.govt_responsibility__provide_jobs_2006.\
@@ -63,7 +63,9 @@ nls97sas.columns = metasas.column_labels
 nls97sas.columns = nls97sas.columns.\
     str.lower().\
     str.replace(' ','_').\
-    str.replace('[^a-z0-9_]', '')
+    str.replace('[^a-z0-9_]', '', regex=True)
 nls97sas.head()
 nls97sas.keysex_symbol_1997.value_counts()
 nls97sas.set_index('pubid__yth_id_code_1997', inplace=True)
+
+pd.__version__

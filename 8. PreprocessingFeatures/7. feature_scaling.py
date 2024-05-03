@@ -3,14 +3,16 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler, StandardScaler, RobustScaler
 
-pd.set_option('display.width', 200)
-pd.set_option('display.max_columns', 100)
+pd.set_option('display.width', 69)
+pd.set_option('display.max_columns', 7)
 pd.set_option('display.max_rows', 200)
 pd.options.display.float_format = '{:,.2f}'.format
 
 covidtotals = pd.read_csv("data/covidtotals.csv")
+
+
 feature_cols = ['population','total_deaths',
-    'aged_65_older','diabetes_prevalence']
+    'aged_65_older','life_expectancy']
 covidtotals = covidtotals[['total_cases'] + feature_cols].dropna()
 
 # separate into train and test sets
