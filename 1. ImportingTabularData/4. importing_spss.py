@@ -52,9 +52,9 @@ nls97stata.dtypes
 nls97stata.head()
 nls97stata.govt_responsibility__provide_jobs_2006.\
   value_counts(sort=False)
-nls97stata.min()
+nls97stata.min(numeric_only=True)
 nls97stata.replace(list(range(-9,0)), np.nan, inplace=True)
-nls97stata.min()
+nls97stata.min(numeric_only=True)
 nls97stata.set_index('pubid__yth_id_code_1997', inplace=True)
 
 # pull sas data, using the sas catalog file for value labels
