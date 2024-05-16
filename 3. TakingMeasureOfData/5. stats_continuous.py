@@ -16,10 +16,10 @@ covidtotals.sample(1, random_state=1).T
 covidtotals.dtypes
 
 # get descriptive statistics on the cumulative values
-covidtotals.describe()
 totvars = ['total_cases',
   'total_deaths','total_cases_pm',
   'total_deaths_pm']
+covidtotals[totvars].describe()
 covidtotals[totvars].\
   quantile(np.arange(0.0, 1.1, 0.1))
 

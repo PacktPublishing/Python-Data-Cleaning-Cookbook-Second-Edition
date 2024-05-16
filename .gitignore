@@ -2,3 +2,31 @@
 1. ImportingTabularData/.spyproject/config/
 2. ImportingJSONHTMLData/data/allcandidatenews.json
 2. ImportingJSONHTMLData/data/landtemps.csv
+*.bak
+*.ini
+*.pyc
+*.bak
+*.ini
+10. CombiningDataFrames/keep.py
+10. CombiningDataFrames/keep2.py
+12. FunctionsClasses/.spyproject/config/backups/workspace.ini.bak
+12. FunctionsClasses/.spyproject/config/workspace.ini
+2.ImportingJSONHTMLData/.spyproject/config/backups/workspace.ini.bak
+2.ImportingJSONHTMLData/.spyproject/config/workspace.ini
+12. FunctionsClasses/.spyproject/config/backups/workspace.ini.bak
+12. FunctionsClasses/.spyproject/config/workspace.ini
+2.ImportingJSONHTMLData/.spyproject/config/backups/workspace.ini.bak
+2.ImportingJSONHTMLData/.spyproject/config/workspace.ini
+12. FunctionsClasses/.spyproject/config/backups/workspace.ini.bak
+*.pdf
+*.ini
+*.bak
+*.ini
+7. IdentifyingandFixingMissingValues/cache/cache_db.db.wal
+7. IdentifyingandFixingMissingValues/cache/cache_db_0.9.db
+7. IdentifyingandFixingMissingValues/cache/cache_db_0.9.db.wal
+2.ImportingJSONHTMLData/data/allcandidatenews.json
+12. FunctionsClasses/.spyproject/config/backups/workspace.ini.bak
+12. FunctionsClasses/.spyproject/config/backups/workspace.ini.bak
+12. FunctionsClasses/.spyproject/config/workspace.ini
+2.ImportingJSONHTMLData/data/landtemps.csv

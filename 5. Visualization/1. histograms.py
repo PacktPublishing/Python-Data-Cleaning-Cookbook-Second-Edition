@@ -1,6 +1,5 @@
 # import pandas, matplotlib, and statsmodels
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import statsmodels.api as sm
 pd.set_option('display.width', 53)

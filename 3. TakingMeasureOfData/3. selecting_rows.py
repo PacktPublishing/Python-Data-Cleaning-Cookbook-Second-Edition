@@ -11,12 +11,10 @@ nls97.set_index("personid", inplace=True)
 nls97[1000:1004].T
 nls97[1000:1004:2].T
 
-# select first 3 rows using head() and Python slicing
-nls97.head(3).T
+# select first 3 rows using Python slicing
 nls97[:3].T
 
 # select last 3 rows using tail() and Python slicing
-nls97.tail(3).T
 nls97[-3:].T
 
 # select a few rows using loc and iloc
@@ -24,9 +22,7 @@ nls97.loc[[195884,195891,195970]].T
 nls97.loc[195884:195970].T
 nls97.iloc[[0]].T
 nls97.iloc[[0,1,2]].T
-nls97.iloc[0:3].T
 nls97.iloc[[-3,-2,-1]].T
-nls97.iloc[-3:].T
 
 # select multiple rows conditionally
 nls97.nightlyhrssleep.quantile(0.05)

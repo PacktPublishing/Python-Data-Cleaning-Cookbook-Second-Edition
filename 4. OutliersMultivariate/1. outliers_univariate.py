@@ -79,7 +79,6 @@ def getoutliers():
 
 outliers = getoutliers()
 outliers.varname.value_counts()
-outliers
 outliers.to_excel("views/outlierscases.xlsx")
 
 # look a little more closely at outliers for deaths per million

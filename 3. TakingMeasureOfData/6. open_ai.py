@@ -31,6 +31,8 @@ covidtotalssdf.chat("Show total cases pm, total deaths pm, and location for loca
 covidtotalsabb = covidtotalssdf.chat("Select total cases pm, total deaths pm, and location.")
 covidtotalsabb
 
+type(covidtotalsabb)
+
 covidtotalsabb = covidtotalssdf.chat("Grab total cases pm, total deaths pm, and location.")
 covidtotalsabb
 

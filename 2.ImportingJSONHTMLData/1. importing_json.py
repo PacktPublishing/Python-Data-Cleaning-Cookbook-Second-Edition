@@ -1,6 +1,5 @@
 # import pandas, numpy, json, pprint
 import pandas as pd
-import numpy as np
 import json
 import pprint
 from collections import Counter
@@ -11,6 +10,7 @@ pd.set_option('display.max_columns', 8)
 with open('data/allcandidatenewssample.json') as f:
   candidatenews = json.load(f)
 
+
 len(candidatenews)
 pprint.pprint(candidatenews[0:2])
 pprint.pprint(candidatenews[0]['source'])
@@ -18,7 +18,7 @@ pprint.pprint(candidatenews[0]['source'])
 Counter([len(item) for item in candidatenews])
 pprint.pprint(next(item for item in candidatenews if len(item)<9))
 pprint.pprint(next(item for item in candidatenews if len(item)>9))
-pprint.pprint([item for item in candidatenews if len(item)==2][0:10])
+pprint.pprint([item for item in candidatenews if len(item)==2][0:2])
 
 candidatenews = [item for item in candidatenews if len(item)>2]
 len(candidatenews)

@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import pyreadstat
 pd.set_option('display.max_columns', 5)
-pd.options.display.float_format = '{:,.2f}'.format
+pd.options.display.float_format = '{:,.0f}'.format
 pd.set_option('display.width', 75)
 
 # retrieve spss data, along with the meta data

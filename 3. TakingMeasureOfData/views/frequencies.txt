@@ -4,17 +4,15 @@ gender
 
 frequencies
 
-gender
 Female    4385
 Male      4599
-Name: count, dtype: int64
+Name: gender, dtype: int64
 
 percentages
 
-gender
 Female   0.49
 Male     0.51
-Name: proportion, dtype: float64
+Name: gender, dtype: float64
 
 
 maritalstatus
@@ -23,23 +21,21 @@ maritalstatus
 
 frequencies
 
-maritalstatus
 Divorced          663
 Married          3066
 Never-married    2766
 Separated         154
 Widowed            23
-Name: count, dtype: int64
+Name: maritalstatus, dtype: int64
 
 percentages
 
-maritalstatus
 Divorced        0.10
 Married         0.46
 Never-married   0.41
 Separated       0.02
 Widowed         0.00
-Name: proportion, dtype: float64
+Name: maritalstatus, dtype: float64
 
 
 weeklyhrscomputer
@@ -48,23 +44,23 @@ weeklyhrscomputer
 
 frequencies
 
-weeklyhrscomputer
 1 to 3 hours a week         733
 10 hours or more a week    3669
 4 to 6 hours a week         726
 7 to 9 hours a week         368
 Less than 1 hour a week     296
-Name: count, dtype: int64
+None                        918
+Name: weeklyhrscomputer, dtype: int64
 
 percentages
 
-weeklyhrscomputer
-1 to 3 hours a week       0.13
-10 hours or more a week   0.63
-4 to 6 hours a week       0.13
-7 to 9 hours a week       0.06
-Less than 1 hour a week   0.05
-Name: proportion, dtype: float64
+1 to 3 hours a week       0.11
+10 hours or more a week   0.55
+4 to 6 hours a week       0.11
+7 to 9 hours a week       0.05
+Less than 1 hour a week   0.04
+None                      0.14
+Name: weeklyhrscomputer, dtype: float64
 
 
 weeklyhrstv
@@ -73,25 +69,23 @@ weeklyhrstv
 
 frequencies
 
-weeklyhrstv
 11 to 20 hours a week         1145
 21 to 30 hours a week          299
 3 to 10 hours a week          3625
 31 to 40 hours a week          116
 Less than 2 hours per week    1350
 More than 40 hours a week      176
-Name: count, dtype: int64
+Name: weeklyhrstv, dtype: int64
 
 percentages
 
-weeklyhrstv
 11 to 20 hours a week        0.17
 21 to 30 hours a week        0.04
 3 to 10 hours a week         0.54
 31 to 40 hours a week        0.02
 Less than 2 hours per week   0.20
 More than 40 hours a week    0.03
-Name: proportion, dtype: float64
+Name: weeklyhrstv, dtype: float64
 
 
 highestdegree
@@ -100,7 +94,6 @@ highestdegree
 
 frequencies
 
-highestdegree
 0. None             953
 1. GED             1146
 2. High School     3667
@@ -109,11 +102,10 @@ highestdegree
 5. Masters          603
 6. PhD               54
 7. Professional     120
-Name: count, dtype: int64
+Name: highestdegree, dtype: int64
 
 percentages
 
-highestdegree
 0. None           0.11
 1. GED            0.13
 2. High School    0.41
@@ -122,7 +114,7 @@ highestdegree
 5. Masters        0.07
 6. PhD            0.01
 7. Professional   0.01
-Name: proportion, dtype: float64
+Name: highestdegree, dtype: float64
 
 
 govprovidejobs
@@ -131,21 +123,19 @@ govprovidejobs
 
 frequencies
 
-govprovidejobs
 1. Definitely        454
 2. Probably          617
 3. Probably not      462
 4. Definitely not    300
-Name: count, dtype: int64
+Name: govprovidejobs, dtype: int64
 
 percentages
 
-govprovidejobs
 1. Definitely       0.25
 2. Probably         0.34
 3. Probably not     0.25
 4. Definitely not   0.16
-Name: proportion, dtype: float64
+Name: govprovidejobs, dtype: float64
 
 
 govpricecontrols
@@ -154,21 +144,19 @@ govpricecontrols
 
 frequencies
 
-govpricecontrols
 1. Definitely        1007
 2. Probably           621
 3. Probably not       161
 4. Definitely not      70
-Name: count, dtype: int64
+Name: govpricecontrols, dtype: int64
 
 percentages
 
-govpricecontrols
 1. Definitely       0.54
 2. Probably         0.33
 3. Probably not     0.09
 4. Definitely not   0.04
-Name: proportion, dtype: float64
+Name: govpricecontrols, dtype: float64
 
 
 govhealthcare
@@ -177,21 +165,19 @@ govhealthcare
 
 frequencies
 
-govhealthcare
 1. Definitely        1247
 2. Probably           508
 3. Probably not        85
 4. Definitely not      34
-Name: count, dtype: int64
+Name: govhealthcare, dtype: int64
 
 percentages
 
-govhealthcare
 1. Definitely       0.67
 2. Probably         0.27
 3. Probably not     0.05
 4. Definitely not   0.02
-Name: proportion, dtype: float64
+Name: govhealthcare, dtype: float64
 
 
 govelderliving
@@ -200,21 +186,19 @@ govelderliving
 
 frequencies
 
-govelderliving
 1. Definitely        1311
 2. Probably           464
 3. Probably not        71
 4. Definitely not      26
-Name: count, dtype: int64
+Name: govelderliving, dtype: int64
 
 percentages
 
-govelderliving
 1. Definitely       0.70
 2. Probably         0.25
 3. Probably not     0.04
 4. Definitely not   0.01
-Name: proportion, dtype: float64
+Name: govelderliving, dtype: float64
 
 
 govindhelp
@@ -223,21 +207,19 @@ govindhelp
 
 frequencies
 
-govindhelp
 1. Definitely        778
 2. Probably          746
 3. Probably not      216
 4. Definitely not     75
-Name: count, dtype: int64
+Name: govindhelp, dtype: int64
 
 percentages
 
-govindhelp
 1. Definitely       0.43
 2. Probably         0.41
 3. Probably not     0.12
 4. Definitely not   0.04
-Name: proportion, dtype: float64
+Name: govindhelp, dtype: float64
 
 
 govunemp
@@ -246,21 +228,19 @@ govunemp
 
 frequencies
 
-govunemp
 1. Definitely        395
 2. Probably          730
 3. Probably not      476
 4. Definitely not    210
-Name: count, dtype: int64
+Name: govunemp, dtype: int64
 
 percentages
 
-govunemp
 1. Definitely       0.22
 2. Probably         0.40
 3. Probably not     0.26
 4. Definitely not   0.12
-Name: proportion, dtype: float64
+Name: govunemp, dtype: float64
 
 
 govincomediff
@@ -269,21 +249,19 @@ govincomediff
 
 frequencies
 
-govincomediff
 1. Definitely        576
 2. Probably          505
 3. Probably not      406
 4. Definitely not    288
-Name: count, dtype: int64
+Name: govincomediff, dtype: int64
 
 percentages
 
-govincomediff
 1. Definitely       0.32
 2. Probably         0.28
 3. Probably not     0.23
 4. Definitely not   0.16
-Name: proportion, dtype: float64
+Name: govincomediff, dtype: float64
 
 
 govcollegefinance
@@ -292,21 +270,19 @@ govcollegefinance
 
 frequencies
 
-govcollegefinance
 1. Definitely        1377
 2. Probably           432
 3. Probably not        50
 4. Definitely not      16
-Name: count, dtype: int64
+Name: govcollegefinance, dtype: int64
 
 percentages
 
-govcollegefinance
 1. Definitely       0.73
 2. Probably         0.23
 3. Probably not     0.03
 4. Definitely not   0.01
-Name: proportion, dtype: float64
+Name: govcollegefinance, dtype: float64
 
 
 govdecenthousing
@@ -315,21 +291,19 @@ govdecenthousing
 
 frequencies
 
-govdecenthousing
 1. Definitely        817
 2. Probably          801
 3. Probably not      185
 4. Definitely not     44
-Name: count, dtype: int64
+Name: govdecenthousing, dtype: int64
 
 percentages
 
-govdecenthousing
 1. Definitely       0.44
 2. Probably         0.43
 3. Probably not     0.10
 4. Definitely not   0.02
-Name: proportion, dtype: float64
+Name: govdecenthousing, dtype: float64
 
 
 govprotectenvironment
@@ -338,21 +312,19 @@ govprotectenvironment
 
 frequencies
 
-govprotectenvironment
 1. Definitely        1244
 2. Probably           533
 3. Probably not        55
 4. Definitely not      28
-Name: count, dtype: int64
+Name: govprotectenvironment, dtype: int64
 
 percentages
 
-govprotectenvironment
 1. Definitely       0.67
 2. Probably         0.29
 3. Probably not     0.03
 4. Definitely not   0.02
-Name: proportion, dtype: float64
+Name: govprotectenvironment, dtype: float64
 
 
 colenrfeb97
@@ -361,17 +333,15 @@ colenrfeb97
 
 frequencies
 
-colenrfeb97
 1. Not enrolled      1248
 3. 4-year college       2
-Name: count, dtype: int64
+Name: colenrfeb97, dtype: int64
 
 percentages
 
-colenrfeb97
 1. Not enrolled     1.00
 3. 4-year college   0.00
-Name: proportion, dtype: float64
+Name: colenrfeb97, dtype: float64
 
 
 colenroct97
@@ -380,19 +350,17 @@ colenroct97
 
 frequencies
 
-colenroct97
 1. Not enrolled       8475
 2. 2-year college       14
 3. 4-year college       12
-Name: count, dtype: int64
+Name: colenroct97, dtype: int64
 
 percentages
 
-colenroct97
 1. Not enrolled      1.00
 2. 2-year college    0.00
 3. 4-year college    0.00
-Name: proportion, dtype: float64
+Name: colenroct97, dtype: float64
 
 
 colenrfeb98
@@ -401,19 +369,17 @@ colenrfeb98
 
 frequencies
 
-colenrfeb98
 1. Not enrolled       8473
 2. 2-year college       15
 3. 4-year college       13
-Name: count, dtype: int64
+Name: colenrfeb98, dtype: int64
 
 percentages
 
-colenrfeb98
 1. Not enrolled      1.00
 2. 2-year college    0.00
 3. 4-year college    0.00
-Name: proportion, dtype: float64
+Name: colenrfeb98, dtype: float64
 
 
 colenroct98
@@ -422,19 +388,17 @@ colenroct98
 
 frequencies
 
-colenroct98
 1. Not enrolled       8482
 2. 2-year college      148
 3. 4-year college      258
-Name: count, dtype: int64
+Name: colenroct98, dtype: int64
 
 percentages
 
-colenroct98
 1. Not enrolled      0.95
 2. 2-year college    0.02
 3. 4-year college    0.03
-Name: proportion, dtype: float64
+Name: colenroct98, dtype: float64
 
 
 colenrfeb99
@@ -443,19 +407,17 @@ colenrfeb99
 
 frequencies
 
-colenrfeb99
 1. Not enrolled       8434
 2. 2-year college      166
 3. 4-year college      265
-Name: count, dtype: int64
+Name: colenrfeb99, dtype: int64
 
 percentages
 
-colenrfeb99
 1. Not enrolled      0.95
 2. 2-year college    0.02
 3. 4-year college    0.03
-Name: proportion, dtype: float64
+Name: colenrfeb99, dtype: float64
 
 
 colenroct99
@@ -464,19 +426,17 @@ colenroct99
 
 frequencies
 
-colenroct99
 1. Not enrolled       7729
 2. 2-year college      371
 3. 4-year college      751
-Name: count, dtype: int64
+Name: colenroct99, dtype: int64
 
 percentages
 
-colenroct99
 1. Not enrolled      0.87
 2. 2-year college    0.04
 3. 4-year college    0.08
-Name: proportion, dtype: float64
+Name: colenroct99, dtype: float64
 
 
 colenrfeb00
@@ -485,19 +445,17 @@ colenrfeb00
 
 frequencies
 
-colenrfeb00
 1. Not enrolled       7680
 2. 2-year college      395
 3. 4-year college      745
-Name: count, dtype: int64
+Name: colenrfeb00, dtype: int64
 
 percentages
 
-colenrfeb00
 1. Not enrolled      0.87
 2. 2-year college    0.04
 3. 4-year college    0.08
-Name: proportion, dtype: float64
+Name: colenrfeb00, dtype: float64
 
 
 colenroct00
@@ -506,19 +464,17 @@ colenroct00
 
 frequencies
 
-colenroct00
 1. Not enrolled       7055
 2. 2-year college      582
 3. 4-year college     1168
-Name: count, dtype: int64
+Name: colenroct00, dtype: int64
 
 percentages
 
-colenroct00
 1. Not enrolled      0.80
 2. 2-year college    0.07
 3. 4-year college    0.13
-Name: proportion, dtype: float64
+Name: colenroct00, dtype: float64
 
 
 colenrfeb01
@@ -527,19 +483,17 @@ colenrfeb01
 
 frequencies
 
-colenrfeb01
 1. Not enrolled       7035
 2. 2-year college      598
 3. 4-year college     1153
-Name: count, dtype: int64
+Name: colenrfeb01, dtype: int64
 
 percentages
 
-colenrfeb01
 1. Not enrolled      0.80
 2. 2-year college    0.07
 3. 4-year college    0.13
-Name: proportion, dtype: float64
+Name: colenrfeb01, dtype: float64
 
 
 colenroct01
@@ -548,19 +502,17 @@ colenroct01
 
 frequencies
 
-colenroct01
 1. Not enrolled       6387
 2. 2-year college      751
 3. 4-year college     1620
-Name: count, dtype: int64
+Name: colenroct01, dtype: int64
 
 percentages
 
-colenroct01
 1. Not enrolled      0.73
 2. 2-year college    0.09
 3. 4-year college    0.18
-Name: proportion, dtype: float64
+Name: colenroct01, dtype: float64
 
 
 colenrfeb02
@@ -569,19 +521,17 @@ colenrfeb02
 
 frequencies
 
-colenrfeb02
 1. Not enrolled       6367
 2. 2-year college      768
 3. 4-year college     1597
-Name: count, dtype: int64
+Name: colenrfeb02, dtype: int64
 
 percentages
 
-colenrfeb02
 1. Not enrolled      0.73
 2. 2-year college    0.09
 3. 4-year college    0.18
-Name: proportion, dtype: float64
+Name: colenrfeb02, dtype: float64
 
 
 colenroct02
@@ -590,19 +540,17 @@ colenroct02
 
 frequencies
 
-colenroct02
 1. Not enrolled       5777
 2. 2-year college      906
 3. 4-year college     2015
-Name: count, dtype: int64
+Name: colenroct02, dtype: int64
 
 percentages
 
-colenroct02
 1. Not enrolled      0.66
 2. 2-year college    0.10
 3. 4-year college    0.23
-Name: proportion, dtype: float64
+Name: colenroct02, dtype: float64
 
 
 colenrfeb03
@@ -611,19 +559,17 @@ colenrfeb03
 
 frequencies
 
-colenrfeb03
 1. Not enrolled       5768
 2. 2-year college      894
 3. 4-year college     1996
-Name: count, dtype: int64
+Name: colenrfeb03, dtype: int64
 
 percentages
 
-colenrfeb03
 1. Not enrolled      0.67
 2. 2-year college    0.10
 3. 4-year college    0.23
-Name: proportion, dtype: float64
+Name: colenrfeb03, dtype: float64
 
 
 colenroct03
@@ -632,21 +578,19 @@ colenroct03
 
 frequencies
 
-colenroct03
 1. Not enrolled        5778
 2. 2-year college       869
 3. 4-year college      1974
 4. Graduate program       1
-Name: count, dtype: int64
+Name: colenroct03, dtype: int64
 
 percentages
 
-colenroct03
 1. Not enrolled       0.67
 2. 2-year college     0.10
 3. 4-year college     0.23
 4. Graduate program   0.00
-Name: proportion, dtype: float64
+Name: colenroct03, dtype: float64
 
 
 colenrfeb04
@@ -655,21 +599,19 @@ colenrfeb04
 
 frequencies
 
-colenrfeb04
 1. Not enrolled        5881
 2. 2-year college       803
 3. 4-year college      1885
 4. Graduate program       9
-Name: count, dtype: int64
+Name: colenrfeb04, dtype: int64
 
 percentages
 
-colenrfeb04
 1. Not enrolled       0.69
 2. 2-year college     0.09
 3. 4-year college     0.22
 4. Graduate program   0.00
-Name: proportion, dtype: float64
+Name: colenrfeb04, dtype: float64
 
 
 colenroct04
@@ -678,21 +620,19 @@ colenroct04
 
 frequencies
 
-colenroct04
 1. Not enrolled        6142
 2. 2-year college       687
 3. 4-year college      1664
 4. Graduate program      53
-Name: count, dtype: int64
+Name: colenroct04, dtype: int64
 
 percentages
 
-colenroct04
 1. Not enrolled       0.72
 2. 2-year college     0.08
 3. 4-year college     0.19
 4. Graduate program   0.01
-Name: proportion, dtype: float64
+Name: colenroct04, dtype: float64
 
 
 colenrfeb05
@@ -701,21 +641,19 @@ colenrfeb05
 
 frequencies
 
-colenrfeb05
 1. Not enrolled        6216
 2. 2-year college       629
 3. 4-year college      1599
 4. Graduate program      64
-Name: count, dtype: int64
+Name: colenrfeb05, dtype: int64
 
 percentages
 
-colenrfeb05
 1. Not enrolled       0.73
 2. 2-year college     0.07
 3. 4-year college     0.19
 4. Graduate program   0.01
-Name: proportion, dtype: float64
+Name: colenrfeb05, dtype: float64
 
 
 colenroct05
@@ -724,21 +662,19 @@ colenroct05
 
 frequencies
 
-colenroct05
 1. Not enrolled        6500
 2. 2-year college       514
 3. 4-year college      1342
 4. Graduate program     115
-Name: count, dtype: int64
+Name: colenroct05, dtype: int64
 
 percentages
 
-colenroct05
 1. Not enrolled       0.77
 2. 2-year college     0.06
 3. 4-year college     0.16
 4. Graduate program   0.01
-Name: proportion, dtype: float64
+Name: colenroct05, dtype: float64
 
 
 colenrfeb06
@@ -747,21 +683,19 @@ colenrfeb06
 
 frequencies
 
-colenrfeb06
 1. Not enrolled        6596
 2. 2-year college       485
 3. 4-year college      1222
 4. Graduate program     123
-Name: count, dtype: int64
+Name: colenrfeb06, dtype: int64
 
 percentages
 
-colenrfeb06
 1. Not enrolled       0.78
 2. 2-year college     0.06
 3. 4-year college     0.15
 4. Graduate program   0.01
-Name: proportion, dtype: float64
+Name: colenrfeb06, dtype: float64
 
 
 colenroct06
@@ -770,21 +704,19 @@ colenroct06
 
 frequencies
 
-colenroct06
 1. Not enrolled        6856
 2. 2-year college       422
 3. 4-year college       947
 4. Graduate program     182
-Name: count, dtype: int64
+Name: colenroct06, dtype: int64
 
 percentages
 
-colenroct06
 1. Not enrolled       0.82
 2. 2-year college     0.05
 3. 4-year college     0.11
 4. Graduate program   0.02
-Name: proportion, dtype: float64
+Name: colenroct06, dtype: float64
 
 
 colenrfeb07
@@ -793,21 +725,19 @@ colenrfeb07
 
 frequencies
 
-colenrfeb07
 1. Not enrolled        6955
 2. 2-year college       396
 3. 4-year college       819
 4. Graduate program     182
-Name: count, dtype: int64
+Name: colenrfeb07, dtype: int64
 
 percentages
 
-colenrfeb07
 1. Not enrolled       0.83
 2. 2-year college     0.05
 3. 4-year college     0.10
 4. Graduate program   0.02
-Name: proportion, dtype: float64
+Name: colenrfeb07, dtype: float64
 
 
 colenroct07
@@ -816,21 +746,19 @@ colenroct07
 
 frequencies
 
-colenroct07
 1. Not enrolled        7056
 2. 2-year college       402
 3. 4-year college       653
 4. Graduate program     220
-Name: count, dtype: int64
+Name: colenroct07, dtype: int64
 
 percentages
 
-colenroct07
 1. Not enrolled       0.85
 2. 2-year college     0.05
 3. 4-year college     0.08
 4. Graduate program   0.03
-Name: proportion, dtype: float64
+Name: colenroct07, dtype: float64
 
 
 colenrfeb08
@@ -839,21 +767,19 @@ colenrfeb08
 
 frequencies
 
-colenrfeb08
 1. Not enrolled        7145
 2. 2-year college       348
 3. 4-year college       583
 4. Graduate program     213
-Name: count, dtype: int64
+Name: colenrfeb08, dtype: int64
 
 percentages
 
-colenrfeb08
 1. Not enrolled       0.86
 2. 2-year college     0.04
 3. 4-year college     0.07
 4. Graduate program   0.03
-Name: proportion, dtype: float64
+Name: colenrfeb08, dtype: float64
 
 
 colenroct08
@@ -862,21 +788,19 @@ colenroct08
 
 frequencies
 
-colenroct08
 1. Not enrolled        7141
 2. 2-year college       364
 3. 4-year college       526
 4. Graduate program     249
-Name: count, dtype: int64
+Name: colenroct08, dtype: int64
 
 percentages
 
-colenroct08
 1. Not enrolled       0.86
 2. 2-year college     0.04
 3. 4-year college     0.06
 4. Graduate program   0.03
-Name: proportion, dtype: float64
+Name: colenroct08, dtype: float64
 
 
 colenrfeb09
@@ -885,21 +809,19 @@ colenrfeb09
 
 frequencies
 
-colenrfeb09
 1. Not enrolled        7208
 2. 2-year college       342
 3. 4-year college       445
 4. Graduate program     241
-Name: count, dtype: int64
+Name: colenrfeb09, dtype: int64
 
 percentages
 
-colenrfeb09
 1. Not enrolled       0.88
 2. 2-year college     0.04
 3. 4-year college     0.05
 4. Graduate program   0.03
-Name: proportion, dtype: float64
+Name: colenrfeb09, dtype: float64
 
 
 colenroct09
@@ -908,21 +830,19 @@ colenroct09
 
 frequencies
 
-colenroct09
 1. Not enrolled        7081
 2. 2-year college       409
 3. 4-year college       448
 4. Graduate program     255
-Name: count, dtype: int64
+Name: colenroct09, dtype: int64
 
 percentages
 
-colenroct09
 1. Not enrolled       0.86
 2. 2-year college     0.05
 3. 4-year college     0.05
 4. Graduate program   0.03
-Name: proportion, dtype: float64
+Name: colenroct09, dtype: float64
 
 
 colenrfeb10
@@ -931,21 +851,19 @@ colenrfeb10
 
 frequencies
 
-colenrfeb10
 1. Not enrolled        7091
 2. 2-year college       369
 3. 4-year college       409
 4. Graduate program     247
-Name: count, dtype: int64
+Name: colenrfeb10, dtype: int64
 
 percentages
 
-colenrfeb10
 1. Not enrolled       0.87
 2. 2-year college     0.05
 3. 4-year college     0.05
 4. Graduate program   0.03
-Name: proportion, dtype: float64
+Name: colenrfeb10, dtype: float64
 
 
 colenroct10
@@ -954,21 +872,19 @@ colenroct10
 
 frequencies
 
-colenroct10
 1. Not enrolled        7073
 2. 2-year college       363
 3. 4-year college       413
 4. Graduate program     242
-Name: count, dtype: int64
+Name: colenroct10, dtype: int64
 
 percentages
 
-colenroct10
 1. Not enrolled       0.87
 2. 2-year college     0.04
 3. 4-year college     0.05
 4. Graduate program   0.03
-Name: proportion, dtype: float64
+Name: colenroct10, dtype: float64
 
 
 colenrfeb11
@@ -977,21 +893,19 @@ colenrfeb11
 
 frequencies
 
-colenrfeb11
 1. Not enrolled        7086
 2. 2-year college       366
 3. 4-year college       358
 4. Graduate program     227
-Name: count, dtype: int64
+Name: colenrfeb11, dtype: int64
 
 percentages
 
-colenrfeb11
 1. Not enrolled       0.88
 2. 2-year college     0.05
 3. 4-year college     0.04
 4. Graduate program   0.03
-Name: proportion, dtype: float64
+Name: colenrfeb11, dtype: float64
 
 
 colenroct11
@@ -1000,21 +914,19 @@ colenroct11
 
 frequencies
 
-colenroct11
 1. Not enrolled        7043
 2. 2-year college       348
 3. 4-year college       363
 4. Graduate program     218
-Name: count, dtype: int64
+Name: colenroct11, dtype: int64
 
 percentages
 
-colenroct11
 1. Not enrolled       0.88
 2. 2-year college     0.04
 3. 4-year college     0.05
 4. Graduate program   0.03
-Name: proportion, dtype: float64
+Name: colenroct11, dtype: float64
 
 
 colenrfeb12
@@ -1023,21 +935,19 @@ colenrfeb12
 
 frequencies
 
-colenrfeb12
 1. Not enrolled        6951
 2. 2-year college       314
 3. 4-year college       340
 4. Graduate program     189
-Name: count, dtype: int64
+Name: colenrfeb12, dtype: int64
 
 percentages
 
-colenrfeb12
 1. Not enrolled       0.89
 2. 2-year college     0.04
 3. 4-year college     0.04
 4. Graduate program   0.02
-Name: proportion, dtype: float64
+Name: colenrfeb12, dtype: float64
 
 
 colenroct12
@@ -1046,21 +956,19 @@ colenroct12
 
 frequencies
 
-colenroct12
 1. Not enrolled        7023
 2. 2-year college       270
 3. 4-year college       309
 4. Graduate program     152
-Name: count, dtype: int64
+Name: colenroct12, dtype: int64
 
 percentages
 
-colenroct12
 1. Not enrolled       0.91
 2. 2-year college     0.03
 3. 4-year college     0.04
 4. Graduate program   0.02
-Name: proportion, dtype: float64
+Name: colenroct12, dtype: float64
 
 
 colenrfeb13
@@ -1069,21 +977,19 @@ colenrfeb13
 
 frequencies
 
-colenrfeb13
 1. Not enrolled        7051
 2. 2-year college       262
 3. 4-year college       288
 4. Graduate program     153
-Name: count, dtype: int64
+Name: colenrfeb13, dtype: int64
 
 percentages
 
-colenrfeb13
 1. Not enrolled       0.91
 2. 2-year college     0.03
 3. 4-year college     0.04
 4. Graduate program   0.02
-Name: proportion, dtype: float64
+Name: colenrfeb13, dtype: float64
 
 
 colenroct13
@@ -1092,21 +998,19 @@ colenroct13
 
 frequencies
 
-colenroct13
 1. Not enrolled        7044
 2. 2-year college       250
 3. 4-year college       302
 4. Graduate program     158
-Name: count, dtype: int64
+Name: colenroct13, dtype: int64
 
 percentages
 
-colenroct13
 1. Not enrolled       0.91
 2. 2-year college     0.03
 3. 4-year college     0.04
 4. Graduate program   0.02
-Name: proportion, dtype: float64
+Name: colenroct13, dtype: float64
 
 
 colenrfeb14
@@ -1115,21 +1019,19 @@ colenrfeb14
 
 frequencies
 
-colenrfeb14
 1. Not enrolled        6974
 2. 2-year college       229
 3. 4-year college       273
 4. Graduate program     148
-Name: count, dtype: int64
+Name: colenrfeb14, dtype: int64
 
 percentages
 
-colenrfeb14
 1. Not enrolled       0.91
 2. 2-year college     0.03
 3. 4-year college     0.04
 4. Graduate program   0.02
-Name: proportion, dtype: float64
+Name: colenrfeb14, dtype: float64
 
 
 colenroct14
@@ -1138,21 +1040,19 @@ colenroct14
 
 frequencies
 
-colenroct14
 1. Not enrolled        6883
 2. 2-year college       197
 3. 4-year college       253
 4. Graduate program     136
-Name: count, dtype: int64
+Name: colenroct14, dtype: int64
 
 percentages
 
-colenroct14
 1. Not enrolled       0.92
 2. 2-year college     0.03
 3. 4-year college     0.03
 4. Graduate program   0.02
-Name: proportion, dtype: float64
+Name: colenroct14, dtype: float64
 
 
 colenrfeb15
@@ -1161,21 +1061,19 @@ colenrfeb15
 
 frequencies
 
-colenrfeb15
 1. Not enrolled        6915
 2. 2-year college       193
 3. 4-year college       230
 4. Graduate program     131
-Name: count, dtype: int64
+Name: colenrfeb15, dtype: int64
 
 percentages
 
-colenrfeb15
 1. Not enrolled       0.93
 2. 2-year college     0.03
 3. 4-year college     0.03
 4. Graduate program   0.02
-Name: proportion, dtype: float64
+Name: colenrfeb15, dtype: float64
 
 
 colenroct15
@@ -1184,21 +1082,19 @@ colenroct15
 
 frequencies
 
-colenroct15
 1. Not enrolled        6905
 2. 2-year college       189
 3. 4-year college       249
 4. Graduate program     126
-Name: count, dtype: int64
+Name: colenroct15, dtype: int64
 
 percentages
 
-colenroct15
 1. Not enrolled       0.92
 2. 2-year college     0.03
 3. 4-year college     0.03
 4. Graduate program   0.02
-Name: proportion, dtype: float64
+Name: colenroct15, dtype: float64
 
 
 colenrfeb16
@@ -1207,21 +1103,19 @@ colenrfeb16
 
 frequencies
 
-colenrfeb16
 1. Not enrolled        6567
 2. 2-year college       156
 3. 4-year college       199
 4. Graduate program     114
-Name: count, dtype: int64
+Name: colenrfeb16, dtype: int64
 
 percentages
 
-colenrfeb16
 1. Not enrolled       0.93
 2. 2-year college     0.02
 3. 4-year college     0.03
 4. Graduate program   0.02
-Name: proportion, dtype: float64
+Name: colenrfeb16, dtype: float64
 
 
 colenroct16
@@ -1230,21 +1124,19 @@ colenroct16
 
 frequencies
 
-colenroct16
 1. Not enrolled        6310
 2. 2-year college       137
 3. 4-year college       179
 4. Graduate program     107
-Name: count, dtype: int64
+Name: colenroct16, dtype: int64
 
 percentages
 
-colenroct16
 1. Not enrolled       0.94
 2. 2-year college     0.02
 3. 4-year college     0.03
 4. Graduate program   0.02
-Name: proportion, dtype: float64
+Name: colenroct16, dtype: float64
 
 
 colenrfeb17
@@ -1253,21 +1145,19 @@ colenrfeb17
 
 frequencies
 
-colenrfeb17
 1. Not enrolled        6338
 2. 2-year college       128
 3. 4-year college       161
 4. Graduate program     106
-Name: count, dtype: int64
+Name: colenrfeb17, dtype: int64
 
 percentages
 
-colenrfeb17
 1. Not enrolled       0.94
 2. 2-year college     0.02
 3. 4-year college     0.02
 4. Graduate program   0.02
-Name: proportion, dtype: float64
+Name: colenrfeb17, dtype: float64
 
 
 colenroct17
@@ -1276,20 +1166,18 @@ colenroct17
 
 frequencies
 
-colenroct17
 1. Not enrolled        6348
 2. 2-year college       129
 3. 4-year college       157
 4. Graduate program     100
-Name: count, dtype: int64
+Name: colenroct17, dtype: int64
 
 percentages
 
-colenroct17
 1. Not enrolled       0.94
 2. 2-year college     0.02
 3. 4-year college     0.02
 4. Graduate program   0.01
-Name: proportion, dtype: float64
+Name: colenroct17, dtype: float64
 
 

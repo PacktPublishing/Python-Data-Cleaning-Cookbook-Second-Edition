@@ -1,8 +1,6 @@
 # import pandas, numpy, and matplotlib
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
 from matplotlib.dates import DateFormatter
 pd.set_option('display.width', 72)
 pd.set_option('display.max_columns', 20)

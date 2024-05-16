@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['../../../../../.config/spyder-py3/temp.py', '6. date_transform.py', '9. series_operations_ai.py', '1. series_basics.py', '2. summary_statistics.py']
+recent_files = ['1. series_basics.py', '2. summary_statistics.py', '3. changing_values.py', '4. changing_conditionally.py', '5. series_strings.py', '6. date_transform.py', '7. series_operations_ai.py']
 
 [main]
 version = 0.2.0

@@ -6,16 +6,17 @@ pd.set_option('display.max_rows', 15)
 pd.options.display.float_format = '{:,.0f}'.format
 nls97 = pd.read_csv("data/nls97.csv")
 nls97.set_index("personid", inplace=True)
-nls97.loc[:, nls97.dtypes == 'object'] = \
+
+nls97[nls97.select_dtypes(['object']).columns] = \
   nls97.select_dtypes(['object']). \
   transform(lambda x: x.astype('category'))
+  
 
 # select a column using the pandas index operator
 analysisdemo = nls97['gender']
 type(analysisdemo)
 analysisdemo = nls97[['gender']]
 type(analysisdemo)
-analysisdemo.dtypes
 analysisdemo = nls97.loc[:,['gender']]
 type(analysisdemo)
 analysisdemo = nls97.iloc[:,[0]]

@@ -45,16 +45,15 @@ lowcases.iloc[:,1:5].head()
 lowcases.dtypes
 lowcases.columns = lowcases.columns.str.replace(" ", "_").str.lower()
 
-lowcases.columns
-fixcols = ['total_cases','total_deaths','total_cases_pm','total_deaths_pm','population','gdp_per_capita']
+#lowcases.columns
+#fixcols = ['total_cases','total_deaths','total_cases_pm','total_deaths_pm','population','gdp_per_capita']
 
 for col in lowcases.columns[2:-1]:
   lowcases[col] = lowcases[col].\
-    str.replace("[^0-9]","").astype('int64')
+    str.replace("[^0-9]","",regex=True).astype('int64')
 
 lowcases['last_date'] = pd.to_datetime(lowcases.last_date)
 lowcases['median_age'] = lowcases['median_age'].astype('float')
 
 lowcases.dtypes
-lowcases.head()
 

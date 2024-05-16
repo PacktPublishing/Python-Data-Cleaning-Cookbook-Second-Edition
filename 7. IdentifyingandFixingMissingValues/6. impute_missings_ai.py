@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from pandasai.llm.openai import OpenAI
 from pandasai import SmartDataframe
-llm = OpenAI(api_token="Your API key")
+llm = OpenAI(api_token="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")
 
 pd.set_option('display.width', 72)
 pd.set_option('display.max_columns', 6)
@@ -17,7 +17,10 @@ nls97.set_index("personid", inplace=True)
 # set up the degree and parent income variables
 
 nls97['hdegnum'] = nls97.highestdegree.str[0:1].astype('category')
-nls97.parentincome.replace(list(range(-5,0)), np.nan, inplace=True)
+nls97['parentincome'] = \
+  nls97.parentincome.\
+  replace(list(range(-5,0)),
+  np.nan)
 
 wagedatalist = ['wageincome20','weeksworked20',
    'parentincome','hdegnum']
@@ -32,8 +35,6 @@ wagedatasdf.chat("Show the counts, means, and standard deviations as table")
 wagedatasdf = \
   wagedatasdf.chat("Impute missing values based on average.")
   
-type(wagedatasdf)
-
 wagedatasdf.chat("Show the counts, means, and standard deviations as table")
 
 wagedatasdf.hdegnum.value_counts(dropna=False).sort_index()
@@ -43,6 +44,7 @@ wagedatasdf.hdegnum.value_counts(dropna=False).sort_index()
 
 # use the impute missings function instead
 wagedatasdf = SmartDataframe(wagedata, config={"llm": llm})
+
 wagedatasdf = \
   wagedatasdf.impute_missing_values()
 wagedatasdf.chat("Show the counts, means, and standard deviations as table")
@@ -50,10 +52,5 @@ wagedatasdf.chat("Show the counts, means, and standard deviations as table")
 # impute with knn
 wagedatasdf = SmartDataframe(wagedata, config={"llm": llm})
 wagedatasdf = wagedatasdf.chat("Impute missings for float variables based on knn with 47 neighbors")
-wagedatasdf.chat("Show the counts, means, and standard deviations as table")
-
-# impute with random forest
-wagedatasdf = SmartDataframe(wagedata, config={"llm": llm})
-wagedatasdf = wagedatasdf.chat("Impute missing values based on random forest")
 wagedatasdf.chat("Show the counts, means, and standard deviations as table")
 
