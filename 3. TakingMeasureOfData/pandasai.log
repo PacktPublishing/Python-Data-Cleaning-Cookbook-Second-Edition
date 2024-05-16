@@ -15186,3 +15186,1322 @@ def analyze_data(dfs: list[pd.DataFrame]) ->dict:
         ```
 2024-02-29 08:42:39 [INFO] Answer: {'type': 'plot', 'value': '/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png'}
 2024-02-29 08:42:39 [INFO] Executed in: 0.3819866180419922s
+2024-05-04 17:07:36 [INFO] Question: Show me some information about the data
+2024-05-04 17:07:36 [INFO] Running PandasAI with openai LLM...
+2024-05-04 17:07:36 [INFO] Prompt ID: 65d7aa3a-81f9-4ac4-b505-de7d32970889
+2024-05-04 17:07:36 [INFO] Using cached response
+2024-05-04 17:07:36 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    return {
+        "type": "dataframe",
+        "value": dfs[0].info()
+    }
+```
+
+2024-05-04 17:07:36 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-04 17:07:36 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    return {'type': 'dataframe', 'value': dfs[0].info()}
+        ```
+2024-05-04 17:07:36 [INFO] Answer: {'type': 'dataframe', 'value': None}
+2024-05-04 17:07:36 [INFO] Executed in: 0.18828701972961426s
+2024-05-04 17:07:55 [INFO] Question: Show first five rows.
+2024-05-04 17:07:55 [INFO] Running PandasAI with openai LLM...
+2024-05-04 17:07:55 [INFO] Prompt ID: a8460a09-1a2f-42af-afdc-87c1290c0574
+2024-05-04 17:07:55 [INFO] Using cached response
+2024-05-04 17:07:55 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Extract the last message from the conversation
+    last_message = "Show first five rows."
+    
+    # Check if the last message is to show the first five rows
+    if "first five rows" in last_message:
+        # Return the first five rows of the first dataframe
+        return { "type": "dataframe", "value": dfs[0].head() }
+```
+
+2024-05-04 17:07:55 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-04 17:07:55 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    last_message = 'Show first five rows.'
+    if 'first five rows' in last_message:
+        return {'type': 'dataframe', 'value': dfs[0].head()}
+        ```
+2024-05-04 17:07:55 [INFO] Answer: {'type': 'dataframe', 'value':            lastdate        location  total_cases  ...  \
+iso_code                                          ...   
+AFG      2024-02-04     Afghanistan      231,539  ...   
+ALB      2024-01-28         Albania      334,863  ...   
+DZA      2023-12-03         Algeria      272,010  ...   
+ASM      2023-09-17  American Samoa        8,359  ...   
+AND      2023-05-07         Andorra       48,015  ...   
+
+          life_expectancy  hum_dev_ind          region  
+iso_code                                                
+AFG                    65            1      South Asia  
+ALB                    79            1  Eastern Europe  
+DZA                    77            1    North Africa  
+ASM                    74          NaN   Oceania / Aus  
+AND                    84            1  Western Europe  
+
+[5 rows x 16 columns]}
+2024-05-04 17:07:55 [INFO] Executed in: 0.13892626762390137s
+2024-05-04 17:08:03 [INFO] Question: Show total cases for locations with the five most total cases.
+2024-05-04 17:08:03 [INFO] Running PandasAI with openai LLM...
+2024-05-04 17:08:03 [INFO] Prompt ID: 187db7a9-9abe-40ad-be8d-c4aad58dbb94
+2024-05-04 17:08:03 [INFO] Using cached response
+2024-05-04 17:08:03 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Process
+    # Sorting the dataframe by total_cases in descending order
+    sorted_df = dfs[0].sort_values(by='total_cases', ascending=False)
+    
+    # Getting the top 5 locations with the most total cases
+    top_5_locations = sorted_df.head(5)
+    
+    # Extracting the location and total_cases columns for the top 5 locations
+    result_df = top_5_locations[['location', 'total_cases']]
+    
+    return { "type": "dataframe", "value": result_df }
+```
+
+2024-05-04 17:08:03 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-04 17:08:03 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    sorted_df = dfs[0].sort_values(by='total_cases', ascending=False)
+    top_5_locations = sorted_df.head(5)
+    result_df = top_5_locations[['location', 'total_cases']]
+    return {'type': 'dataframe', 'value': result_df}
+        ```
+2024-05-04 17:08:03 [INFO] Answer: {'type': 'dataframe', 'value':                location  total_cases
+iso_code                            
+USA       United States  103,436,829
+CHN               China   99,329,249
+IND               India   45,026,139
+FRA              France   38,997,490
+DEU             Germany   38,437,756}
+2024-05-04 17:08:03 [INFO] Executed in: 0.13004374504089355s
+2024-05-04 17:08:52 [INFO] Question: Show total cases pm, total deaths pm, and location for locations with the 10 highest total cases pm.
+2024-05-04 17:08:52 [INFO] Running PandasAI with openai LLM...
+2024-05-04 17:08:52 [INFO] Prompt ID: 21d3876d-7ec6-41b8-af02-0a4c749f4c80
+2024-05-04 17:08:52 [INFO] Using cached response
+2024-05-04 17:08:52 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Process
+    top_10_locations = dfs[0].nlargest(10, 'total_cases_pm')[['total_cases_pm', 'total_deaths_pm', 'location']]
+    
+    # Analyze
+    result_df = top_10_locations
+    
+    return {"type": "dataframe", "value": result_df}
+```
+
+2024-05-04 17:08:52 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-04 17:08:52 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    top_10_locations = dfs[0].nlargest(10, 'total_cases_pm')[['total_cases_pm', 'total_deaths_pm', 'location']]
+    result_df = top_10_locations
+    return {'type': 'dataframe', 'value': result_df}
+        ```
+2024-05-04 17:08:52 [INFO] Answer: {'type': 'dataframe', 'value':           total_cases_pm  total_deaths_pm        location
+iso_code                                                 
+BRN              763,475              396          Brunei
+CYP              760,161            1,523          Cyprus
+SMR              750,727            3,740      San Marino
+AUT              680,263            2,521         Austria
+KOR              667,207              693     South Korea
+FRO              652,484              527  Faeroe Islands
+SVN              639,408            4,697        Slovenia
+GIB              628,883            3,458       Gibraltar
+MTQ              626,793            3,004      Martinique
+LUX              603,439            1,544      Luxembourg}
+2024-05-04 17:08:52 [INFO] Executed in: 0.13279962539672852s
+2024-05-04 17:09:06 [INFO] Question: Select total cases pm, total deaths pm, and location.
+2024-05-04 17:09:06 [INFO] Running PandasAI with openai LLM...
+2024-05-04 17:09:06 [INFO] Prompt ID: fa09b71e-263d-4673-b2c0-2f94a4b6d701
+2024-05-04 17:09:06 [INFO] Using cached response
+2024-05-04 17:09:06 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Extracting the required columns from the dataframe
+    selected_data = dfs[0][['total_cases_pm', 'total_deaths_pm', 'location']]
+    
+    return { "type": "dataframe", "value": selected_data }
+```
+
+2024-05-04 17:09:06 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-04 17:09:06 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    selected_data = dfs[0][['total_cases_pm', 'total_deaths_pm', 'location']]
+    return {'type': 'dataframe', 'value': selected_data}
+        ```
+2024-05-04 17:09:06 [INFO] Answer: {'type': 'dataframe', 'value':           total_cases_pm  total_deaths_pm           location
+iso_code                                                    
+AFG                5,630              194        Afghanistan
+ALB              117,813            1,268            Albania
+DZA                6,058              153            Algeria
+ASM              188,712              768     American Samoa
+AND              601,368            1,991            Andorra
+...                  ...              ...                ...
+VNM              118,387              440            Vietnam
+WLF              306,140              690  Wallis and Futuna
+YEM                  354               64              Yemen
+ZMB               17,450              203             Zambia
+ZWE               16,315              352           Zimbabwe
+
+[231 rows x 3 columns]}
+2024-05-04 17:09:06 [INFO] Executed in: 0.12825775146484375s
+2024-05-04 17:09:13 [INFO] Question: Grab total cases pm, total deaths pm, and location.
+2024-05-04 17:09:13 [INFO] Running PandasAI with openai LLM...
+2024-05-04 17:09:13 [INFO] Prompt ID: de7f0553-ff9f-4f53-be91-29e360d2c7d4
+2024-05-04 17:09:13 [INFO] Using cached response
+2024-05-04 17:09:13 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Extracting the required columns from the dataframe
+    selected_data = dfs[0][['total_cases_pm', 'total_deaths_pm', 'location']]
+    
+    # Returning the selected data as a dataframe
+    return { "type": "dataframe", "value": selected_data }
+```
+
+2024-05-04 17:09:13 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-04 17:09:13 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    selected_data = dfs[0][['total_cases_pm', 'total_deaths_pm', 'location']]
+    return {'type': 'dataframe', 'value': selected_data}
+        ```
+2024-05-04 17:09:13 [INFO] Answer: {'type': 'dataframe', 'value':           total_cases_pm  total_deaths_pm           location
+iso_code                                                    
+AFG                5,630              194        Afghanistan
+ALB              117,813            1,268            Albania
+DZA                6,058              153            Algeria
+ASM              188,712              768     American Samoa
+AND              601,368            1,991            Andorra
+...                  ...              ...                ...
+VNM              118,387              440            Vietnam
+WLF              306,140              690  Wallis and Futuna
+YEM                  354               64              Yemen
+ZMB               17,450              203             Zambia
+ZWE               16,315              352           Zimbabwe
+
+[231 rows x 3 columns]}
+2024-05-04 17:09:13 [INFO] Executed in: 0.13657593727111816s
+2024-05-06 21:53:17 [INFO] Question: Show me some information about the data
+2024-05-06 21:53:17 [INFO] Running PandasAI with openai LLM...
+2024-05-06 21:53:17 [INFO] Prompt ID: 6fab3743-9434-4adf-9ee7-ff7b91dba4e2
+2024-05-06 21:53:17 [INFO] Using cached response
+2024-05-06 21:53:17 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    return {
+        "type": "dataframe",
+        "value": dfs[0].info()
+    }
+```
+
+2024-05-06 21:53:17 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-06 21:53:17 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    return {'type': 'dataframe', 'value': dfs[0].info()}
+        ```
+2024-05-06 21:53:17 [INFO] Answer: {'type': 'dataframe', 'value': None}
+2024-05-06 21:53:17 [INFO] Executed in: 0.22449779510498047s
+2024-05-06 21:53:21 [INFO] Question: Show first five rows.
+2024-05-06 21:53:21 [INFO] Running PandasAI with openai LLM...
+2024-05-06 21:53:21 [INFO] Prompt ID: 9bde36ea-2f5f-4fcc-94a1-d3345aa675a0
+2024-05-06 21:53:21 [INFO] Using cached response
+2024-05-06 21:53:21 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Extract the last message from the conversation
+    last_message = "Show first five rows."
+    
+    # Check if the last message is to show the first five rows
+    if "first five rows" in last_message:
+        # Return the first five rows of the first dataframe
+        return { "type": "dataframe", "value": dfs[0].head() }
+```
+
+2024-05-06 21:53:21 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-06 21:53:21 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    last_message = 'Show first five rows.'
+    if 'first five rows' in last_message:
+        return {'type': 'dataframe', 'value': dfs[0].head()}
+        ```
+2024-05-06 21:53:21 [INFO] Answer: {'type': 'dataframe', 'value':            lastdate        location  total_cases  ...  \
+iso_code                                          ...   
+AFG      2024-02-04     Afghanistan      231,539  ...   
+ALB      2024-01-28         Albania      334,863  ...   
+DZA      2023-12-03         Algeria      272,010  ...   
+ASM      2023-09-17  American Samoa        8,359  ...   
+AND      2023-05-07         Andorra       48,015  ...   
+
+          life_expectancy  hum_dev_ind          region  
+iso_code                                                
+AFG                    65            1      South Asia  
+ALB                    79            1  Eastern Europe  
+DZA                    77            1    North Africa  
+ASM                    74          NaN   Oceania / Aus  
+AND                    84            1  Western Europe  
+
+[5 rows x 16 columns]}
+2024-05-06 21:53:21 [INFO] Executed in: 0.12695789337158203s
+2024-05-06 21:53:24 [INFO] Question: Show total cases for locations with the five most total cases.
+2024-05-06 21:53:24 [INFO] Running PandasAI with openai LLM...
+2024-05-06 21:53:24 [INFO] Prompt ID: a77de6b8-fa20-4921-9306-d3fcc73acec4
+2024-05-06 21:53:24 [INFO] Using cached response
+2024-05-06 21:53:24 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Process
+    # Sorting the dataframe by total_cases in descending order
+    sorted_df = dfs[0].sort_values(by='total_cases', ascending=False)
+    
+    # Getting the top 5 locations with the most total cases
+    top_5_locations = sorted_df.head(5)
+    
+    # Extracting the location and total_cases columns for the top 5 locations
+    result_df = top_5_locations[['location', 'total_cases']]
+    
+    return { "type": "dataframe", "value": result_df }
+```
+
+2024-05-06 21:53:24 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-06 21:53:24 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    sorted_df = dfs[0].sort_values(by='total_cases', ascending=False)
+    top_5_locations = sorted_df.head(5)
+    result_df = top_5_locations[['location', 'total_cases']]
+    return {'type': 'dataframe', 'value': result_df}
+        ```
+2024-05-06 21:53:24 [INFO] Answer: {'type': 'dataframe', 'value':                location  total_cases
+iso_code                            
+USA       United States  103,436,829
+CHN               China   99,329,249
+IND               India   45,026,139
+FRA              France   38,997,490
+DEU             Germany   38,437,756}
+2024-05-06 21:53:24 [INFO] Executed in: 0.13077688217163086s
+2024-05-06 21:53:26 [INFO] Question: Show total cases pm, total deaths pm, and location for locations with the 10 highest total cases pm.
+2024-05-06 21:53:26 [INFO] Running PandasAI with openai LLM...
+2024-05-06 21:53:26 [INFO] Prompt ID: 4d0234fd-9029-4d81-a726-3b21d442d6f4
+2024-05-06 21:53:26 [INFO] Using cached response
+2024-05-06 21:53:26 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Process
+    top_10_locations = dfs[0].nlargest(10, 'total_cases_pm')[['total_cases_pm', 'total_deaths_pm', 'location']]
+    
+    # Analyze
+    result_df = top_10_locations
+    
+    return {"type": "dataframe", "value": result_df}
+```
+
+2024-05-06 21:53:26 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-06 21:53:26 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    top_10_locations = dfs[0].nlargest(10, 'total_cases_pm')[['total_cases_pm', 'total_deaths_pm', 'location']]
+    result_df = top_10_locations
+    return {'type': 'dataframe', 'value': result_df}
+        ```
+2024-05-06 21:53:27 [INFO] Answer: {'type': 'dataframe', 'value':           total_cases_pm  total_deaths_pm        location
+iso_code                                                 
+BRN              763,475              396          Brunei
+CYP              760,161            1,523          Cyprus
+SMR              750,727            3,740      San Marino
+AUT              680,263            2,521         Austria
+KOR              667,207              693     South Korea
+FRO              652,484              527  Faeroe Islands
+SVN              639,408            4,697        Slovenia
+GIB              628,883            3,458       Gibraltar
+MTQ              626,793            3,004      Martinique
+LUX              603,439            1,544      Luxembourg}
+2024-05-06 21:53:27 [INFO] Executed in: 0.1065835952758789s
+2024-05-06 21:53:29 [INFO] Question: Select total cases pm, total deaths pm, and location.
+2024-05-06 21:53:29 [INFO] Running PandasAI with openai LLM...
+2024-05-06 21:53:29 [INFO] Prompt ID: f8de942b-b89d-448a-812e-e9b6a1471c9d
+2024-05-06 21:53:29 [INFO] Using cached response
+2024-05-06 21:53:29 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Extracting the required columns from the dataframe
+    selected_data = dfs[0][['total_cases_pm', 'total_deaths_pm', 'location']]
+    
+    return { "type": "dataframe", "value": selected_data }
+```
+
+2024-05-06 21:53:29 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-06 21:53:29 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    selected_data = dfs[0][['total_cases_pm', 'total_deaths_pm', 'location']]
+    return {'type': 'dataframe', 'value': selected_data}
+        ```
+2024-05-06 21:53:29 [INFO] Answer: {'type': 'dataframe', 'value':           total_cases_pm  total_deaths_pm           location
+iso_code                                                    
+AFG                5,630              194        Afghanistan
+ALB              117,813            1,268            Albania
+DZA                6,058              153            Algeria
+ASM              188,712              768     American Samoa
+AND              601,368            1,991            Andorra
+...                  ...              ...                ...
+VNM              118,387              440            Vietnam
+WLF              306,140              690  Wallis and Futuna
+YEM                  354               64              Yemen
+ZMB               17,450              203             Zambia
+ZWE               16,315              352           Zimbabwe
+
+[231 rows x 3 columns]}
+2024-05-06 21:53:29 [INFO] Executed in: 0.10631299018859863s
+2024-05-06 21:53:36 [INFO] Question: Grab total cases pm, total deaths pm, and location.
+2024-05-06 21:53:36 [INFO] Running PandasAI with openai LLM...
+2024-05-06 21:53:36 [INFO] Prompt ID: 5d884cdd-b9fb-40b8-adf6-5710059b6d60
+2024-05-06 21:53:36 [INFO] Using cached response
+2024-05-06 21:53:36 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Extracting the required columns from the dataframe
+    selected_data = dfs[0][['total_cases_pm', 'total_deaths_pm', 'location']]
+    
+    # Returning the selected data as a dataframe
+    return { "type": "dataframe", "value": selected_data }
+```
+
+2024-05-06 21:53:36 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-06 21:53:36 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    selected_data = dfs[0][['total_cases_pm', 'total_deaths_pm', 'location']]
+    return {'type': 'dataframe', 'value': selected_data}
+        ```
+2024-05-06 21:53:36 [INFO] Answer: {'type': 'dataframe', 'value':           total_cases_pm  total_deaths_pm           location
+iso_code                                                    
+AFG                5,630              194        Afghanistan
+ALB              117,813            1,268            Albania
+DZA                6,058              153            Algeria
+ASM              188,712              768     American Samoa
+AND              601,368            1,991            Andorra
+...                  ...              ...                ...
+VNM              118,387              440            Vietnam
+WLF              306,140              690  Wallis and Futuna
+YEM                  354               64              Yemen
+ZMB               17,450              203             Zambia
+ZWE               16,315              352           Zimbabwe
+
+[231 rows x 3 columns]}
+2024-05-06 21:53:36 [INFO] Executed in: 0.10967350006103516s
+2024-05-06 21:53:40 [INFO] Question: Show total cases pm and location where total cases pm greater than 95th percentile.
+2024-05-06 21:53:40 [INFO] Running PandasAI with openai LLM...
+2024-05-06 21:53:40 [INFO] Prompt ID: 80017a64-a0a1-4bc2-a8e7-f5ee5da1acc7
+2024-05-06 21:53:40 [INFO] Using cached response
+2024-05-06 21:53:40 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Filtering the dataframe to get rows where total cases pm is greater than the 95th percentile
+    filtered_data = dfs[0][dfs[0]['total_cases_pm'] > dfs[0]['total_cases_pm'].quantile(0.95)]
+    
+    # Selecting only the 'location' and 'total_cases_pm' columns from the filtered data
+    result_data = filtered_data[['location', 'total_cases_pm']]
+    
+    return {"type": "dataframe", "value": result_data}
+```
+
+2024-05-06 21:53:40 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-06 21:53:40 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    filtered_data = dfs[0][dfs[0]['total_cases_pm'] > dfs[0]['total_cases_pm'].quantile(0.95)]
+    result_data = filtered_data[['location', 'total_cases_pm']]
+    return {'type': 'dataframe', 'value': result_data}
+        ```
+2024-05-06 21:53:40 [INFO] Answer: {'type': 'dataframe', 'value':                 location  total_cases_pm
+iso_code                                
+AND              Andorra         601,368
+AUT              Austria         680,263
+BRN               Brunei         763,475
+CYP               Cyprus         760,161
+FRO       Faeroe Islands         652,484
+FRA               France         603,428
+GIB            Gibraltar         628,883
+LUX           Luxembourg         603,439
+MTQ           Martinique         626,793
+SMR           San Marino         750,727
+SVN             Slovenia         639,408
+KOR          South Korea         667,207}
+2024-05-06 21:53:40 [INFO] Executed in: 0.13310575485229492s
+2024-05-06 21:53:42 [INFO] Question: Summarize values for total cases pm and total deaths pm.
+2024-05-06 21:53:42 [INFO] Running PandasAI with openai LLM...
+2024-05-06 21:53:42 [INFO] Prompt ID: c8019d3f-7d46-40b0-892f-bc0e762d7abb
+2024-05-06 21:53:42 [INFO] Using cached response
+2024-05-06 21:53:42 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Extracting the required columns from the dataframe
+    total_cases_pm = dfs[0][['total_cases_pm']]
+    total_deaths_pm = dfs[0][['total_deaths_pm']]
+    
+    # Calculating summary statistics for total cases pm and total deaths pm
+    total_cases_pm_summary = total_cases_pm.describe().T
+    total_deaths_pm_summary = total_deaths_pm.describe().T
+    
+    # Returning the summarized values for total cases pm and total deaths pm
+    return { "type": "dataframe", "value": pd.concat([total_cases_pm_summary, total_deaths_pm_summary]) }
+```
+
+2024-05-06 21:53:42 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-06 21:53:42 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    total_cases_pm = dfs[0][['total_cases_pm']]
+    total_deaths_pm = dfs[0][['total_deaths_pm']]
+    total_cases_pm_summary = total_cases_pm.describe().T
+    total_deaths_pm_summary = total_deaths_pm.describe().T
+    return {'type': 'dataframe', 'value': pd.concat([total_cases_pm_summary, total_deaths_pm_summary])}
+        ```
+2024-05-06 21:53:42 [INFO] Answer: {'type': 'dataframe', 'value':                  count    mean     std  ...     50%     75%     max
+total_cases_pm     231 206,178 203,858  ... 133,946 345,690 763,475
+total_deaths_pm    231   1,262   1,315  ...     827   1,998   6,508
+
+[2 rows x 8 columns]}
+2024-05-06 21:53:42 [INFO] Executed in: 0.13764715194702148s
+2024-05-06 21:53:44 [INFO] Question: Show sum of total cases and total deaths by region.
+2024-05-06 21:53:44 [INFO] Running PandasAI with openai LLM...
+2024-05-06 21:53:44 [INFO] Prompt ID: 2a7e00fe-1a46-4728-8722-8a49a3845fb2
+2024-05-06 21:53:44 [INFO] Using cached response
+2024-05-06 21:53:44 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Process
+    grouped_data = dfs[0].groupby('region')[['total_cases', 'total_deaths']].sum()
+    
+    # Analyze
+    result = grouped_data.reset_index()
+    
+    return { "type": "dataframe", "value": result }
+```
+
+2024-05-06 21:53:44 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-06 21:53:44 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    grouped_data = dfs[0].groupby('region')[['total_cases', 'total_deaths']].sum()
+    result = grouped_data.reset_index()
+    return {'type': 'dataframe', 'value': result}
+        ```
+2024-05-06 21:53:44 [INFO] Answer: {'type': 'dataframe', 'value':              region  total_cases  total_deaths
+0         Caribbean    4,258,031        32,584
+1    Central Africa      640,579         8,128
+2   Central America    4,285,644        54,500
+3      Central Asia    3,070,921        40,365
+4       East Africa    2,186,107        28,519
+5         East Asia  205,704,775       604,355
+6    Eastern Europe   62,360,832       969,011
+7      North Africa    3,727,507        83,872
+8     North America  115,917,286     1,516,239
+9     Oceania / Aus   14,741,706        31,730
+10    South America   68,751,186     1,354,440
+11       South Asia   51,507,806       632,374
+12  Southern Africa    5,627,277       126,376
+13      West Africa      953,756        12,184
+14        West Asia   41,080,675       360,258
+15   Western Europe  189,405,185     1,124,545}
+2024-05-06 21:53:44 [INFO] Executed in: 0.13860058784484863s
+2024-05-06 21:53:47 [INFO] Question: Plot the total_cases_pm column data distribution
+2024-05-06 21:53:47 [INFO] Running PandasAI with openai LLM...
+2024-05-06 21:53:47 [INFO] Prompt ID: fdc277a6-6fde-489e-9559-9b1629b58f22
+2024-05-06 21:53:47 [INFO] Using cached response
+2024-05-06 21:53:47 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Extracting the required dataframe
+    df = dfs[0]
+    
+    # Plotting the distribution of the total_cases_pm column
+    plt.figure(figsize=(10, 6))
+    plt.hist(df['total_cases_pm'], bins=20, color='skyblue', edgecolor='black')
+    plt.title('Distribution of Total Cases per Million')
+    plt.xlabel('Total Cases per Million')
+    plt.ylabel('Frequency')
+    plt.grid(axis='y', alpha=0.75)
+    
+    # Save the plot as an image
+    plt.savefig('temp_chart.png')
+    plt.close()
+    
+    return { "type": "plot", "value": "temp_chart.png" }
+```
+
+2024-05-06 21:53:47 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-06 21:53:47 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    df = dfs[0]
+    plt.figure(figsize=(10, 6))
+    plt.hist(df['total_cases_pm'], bins=20, color='skyblue', edgecolor='black')
+    plt.title('Distribution of Total Cases per Million')
+    plt.xlabel('Total Cases per Million')
+    plt.ylabel('Frequency')
+    plt.grid(axis='y', alpha=0.75)
+    plt.savefig('/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png')
+    plt.close()
+    return {'type': 'plot', 'value': '/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png'}
+        ```
+2024-05-06 21:53:47 [INFO] Answer: {'type': 'plot', 'value': '/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png'}
+2024-05-06 21:53:47 [INFO] Executed in: 0.35646772384643555s
+2024-05-06 21:53:49 [INFO] Question: Plot the total_cases_pm data distribution
+2024-05-06 21:53:49 [INFO] Running PandasAI with openai LLM...
+2024-05-06 21:53:49 [INFO] Prompt ID: 4e05de0a-6e6c-4372-928f-7c20e3decce3
+2024-05-06 21:53:49 [INFO] Using cached response
+2024-05-06 21:53:49 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+    
+    # Extract the required dataframe
+    df = dfs[0]
+    
+    # Plot the total_cases_pm data distribution
+    plt.figure(figsize=(10, 6))
+    plt.hist(df['total_cases_pm'], bins=20, color='skyblue', edgecolor='black')
+    plt.xlabel('Total Cases per Million')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Total Cases per Million')
+    plt.grid(axis='y', alpha=0.75)
+    
+    # Save the plot as an image
+    plt.savefig('temp_chart.png')
+    plt.close()
+    
+    return {"type": "plot", "value": "temp_chart.png"}
+```
+
+2024-05-06 21:53:49 [INFO] Saving charts to /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png
+2024-05-06 21:53:49 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in /home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png" }
+    """
+    df = dfs[0]
+    plt.figure(figsize=(10, 6))
+    plt.hist(df['total_cases_pm'], bins=20, color='skyblue', edgecolor='black')
+    plt.xlabel('Total Cases per Million')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Total Cases per Million')
+    plt.grid(axis='y', alpha=0.75)
+    plt.savefig('/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png')
+    plt.close()
+    return {'type': 'plot', 'value': '/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png'}
+        ```
+2024-05-06 21:53:50 [INFO] Answer: {'type': 'plot', 'value': '/home/mike/Documents/maindrive/Packt3/Python-Data-Cleaning-Cookbook-Second-Edition/3. TakingMeasureOfData/temp_chart.png'}
+2024-05-06 21:53:50 [INFO] Executed in: 0.3647947311401367s

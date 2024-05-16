@@ -10,6 +10,7 @@ pd.set_option('display.max_columns', 8)
 
 # load complicated JSON data from an API
 response = requests.get("https://openaccess-api.clevelandart.org/api/artworks/?african_american_artists")
+
 camcollections = json.loads(response.text)
 len(camcollections['data'])
 pprint.pprint(camcollections['data'][0])

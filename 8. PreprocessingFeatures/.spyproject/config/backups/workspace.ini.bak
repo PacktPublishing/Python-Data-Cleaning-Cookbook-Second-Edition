@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = empty-project-type
-recent_files = ['7. feature_scaling.py', '8. hc.py', '3. one-hot_encoding.py', '2. redundant_features.py', '5. feature_transform.py', '4. high_cardinality_encoding.py', '9. hc2.py', '6. feature_binning.py']
+recent_files = ['1. testing_training_split.py', '2. redundant_features.py', '3. one-hot_encoding.py', '4. high_cardinality_encoding.py', '5. feature_transform.py', '6. feature_binning.py', '7. feature_scaling.py', '8. hc.py', '9. hc2.py']
 
 [main]
 version = 0.2.0

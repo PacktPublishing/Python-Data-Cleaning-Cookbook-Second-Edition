@@ -54,4 +54,4 @@ tr.fit(X_train_tr)
 X_train_tr = tr.transform(X_train_tr)
 X_train_tr.head()
 
-fesel.__version__
+pd.__version__

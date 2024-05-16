@@ -18,7 +18,7 @@ nls97.loc[:, "colenroct15":"colenrfeb22"].head(2).T
 
 # show individuals with wage income but no weeks worked
 nls97.loc[(nls97.weeksworked20==0) &
-   nls97.wageincome20>0, 
+   (nls97.wageincome20>0), 
   ['weeksworked20','wageincome20']]
 
 # check for ever enrolled in 4-year college

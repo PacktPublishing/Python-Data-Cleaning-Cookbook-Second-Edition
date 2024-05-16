@@ -1,6 +1,5 @@
 # import pandas, matplotlib, and seaborn
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 pd.set_option('display.width', 72)
@@ -11,6 +10,7 @@ pd.set_option('mode.use_inf_as_na', False)
 nls97 = pd.read_csv("data/nls97f.csv", low_memory=False)
 nls97.set_index("personid", inplace=True)
 covidtotals = pd.read_csv("data/covidtotals.csv", parse_dates=["lastdate"])
+
 covidtotals.set_index("iso_code", inplace=True)
 
 # view some descriptive statistics
@@ -44,6 +44,8 @@ covidtotals.groupby(['region'])['total_cases_pm'].\
   apply(gettots).unstack()
 
 # do boxplots for cases per million by region
+covidtotals.total_cases_pm.describe()
+covidtotals.region.value_counts(dropna=False)
 sns.boxplot(x='total_cases_pm', y='region', data=covidtotals)
 sns.swarmplot(y="region", x="total_cases_pm", data=covidtotals, size=2, color=".3", linewidth=0)
 plt.title("Boxplots of Total Cases Per Million by Region")

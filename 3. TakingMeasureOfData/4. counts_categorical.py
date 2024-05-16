@@ -29,8 +29,8 @@ nls97.filter(like="gov").apply(pd.Series.value_counts, normalize=True)
 
 # do percentages for all government responsibility variables for people who are married
 nls97[nls97.maritalstatus=="Married"].\
-filter(like="gov").\
-apply(pd.Series.value_counts, normalize=True)
+  filter(like="gov").\
+  apply(pd.Series.value_counts, normalize=True)
 
 # do frequencies and percentages for all category variables in data frame
 freqout = open('views/frequencies.txt', 'w') 

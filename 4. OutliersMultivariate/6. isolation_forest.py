@@ -6,7 +6,7 @@ pd.set_option('display.max_rows', 20)
 pd.set_option('display.max_columns', 6)
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import IsolationForest
-from mpl_toolkits.mplot3d import Axes3D
+#from mpl_toolkits.mplot3d import Axes3D
 covidtotals = pd.read_csv("data/covidtotals.csv")
 covidtotals.set_index("iso_code", inplace=True)
 
@@ -40,7 +40,6 @@ outlier[['location','total_cases_pm',
   head(10)
 
 # plot the inliers and outliers
-fig = plt.figure()
 ax = plt.axes(projection='3d')
 ax.set_title('Isolation Forest Anomaly Detection')
 ax.set_zlabel("Cases Per Million")
