@@ -30,3 +30,15 @@
 12. FunctionsClasses/.spyproject/config/backups/workspace.ini.bak
 12. FunctionsClasses/.spyproject/config/workspace.ini
 2.ImportingJSONHTMLData/data/landtemps.csv
+12. FunctionsClasses/.spyproject/config/backups/workspace.ini.bak
+12. FunctionsClasses/.spyproject/config/workspace.ini
+2.ImportingJSONHTMLData/.spyproject/config/backups/workspace.ini.bak
+2.ImportingJSONHTMLData/.spyproject/config/workspace.ini
+*.bak
+3. TakingMeasureOfData/cache/cache_db.db
+3. TakingMeasureOfData/cache/cache_db.db.wal
+3. TakingMeasureOfData/pandasai.log
+4. OutliersMultivariate/data/covidtotalskeep.csv
+*.log
+*.png
+*.wal
