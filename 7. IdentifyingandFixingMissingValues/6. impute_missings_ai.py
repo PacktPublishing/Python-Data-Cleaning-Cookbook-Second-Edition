@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from pandasai.llm.openai import OpenAI
 from pandasai import SmartDataframe
-llm = OpenAI(api_token="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")
+llm = OpenAI(api_token="Your API Key")
 
 pd.set_option('display.width', 72)
 pd.set_option('display.max_columns', 6)
