@@ -1,7 +1,7 @@
 # import pandas and load the covid data and land temperature data
 import pandas as pd
 pd.set_option('display.width', 72)
-pd.set_option('display.max_columns', 7)
+pd.set_option('display.max_columns', 7 )
 pd.set_option('display.max_rows', 200)
 pd.options.display.float_format = '{:,.0f}'.format
 
