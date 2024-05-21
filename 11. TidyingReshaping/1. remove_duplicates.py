@@ -11,8 +11,6 @@ dailyvars = ['casedate','new_cases','new_deaths']
 totvars = ['location','total_cases','total_deaths']
 
 
-covidcases.head(2).T
-
 demovars = ['population','population_density',
   'median_age','gdp_per_capita',
   'hospital_beds_per_thousand','region']

@@ -57,17 +57,6 @@ nls97['hsachieve2'] = nls97.apply(gethsachieve, axis=1)
 nls97.groupby(['hsachieve','hsachieve2']).size()
 
 
-# create a flag if individual ever had bachelor degree enrollment
-nls97.loc[[999406,750699], 
-  'colenrfeb00':'colenroct04'].T
-nls97['baenrollment'] = nls97.filter(like="colenr").\
-  transform(lambda x: x.str[0:1]=='3').\
-  any(axis=1)
-
-nls97.loc[[999406,750699], ['baenrollment']].T
-nls97.baenrollment.value_counts()
-
-
 # use apply and lambda to create a more complicated categorical series
 def getsleepdeprivedreason(row):
   sleepdeprivedreason = "Unknown"
@@ -92,4 +81,14 @@ nls97['sleepdeprivedreason'] = nls97.apply(getsleepdeprivedreason, axis=1)
 nls97.sleepdeprivedreason = nls97.sleepdeprivedreason.astype('category')
 nls97.sleepdeprivedreason.value_counts()
 
+
+# create a flag if individual ever had bachelor degree enrollment
+nls97.loc[[999406,750699], 
+  'colenrfeb00':'colenroct04'].T
+nls97['baenrollment'] = nls97.filter(like="colenr").\
+  transform(lambda x: x.str[0:1]=='3').\
+  any(axis=1)
+
+nls97.loc[[999406,750699], ['baenrollment']].T
+nls97.baenrollment.value_counts()
 

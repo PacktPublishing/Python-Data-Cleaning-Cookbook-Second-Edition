@@ -45,9 +45,6 @@ highestdegreenonum = nls97.highestdegree.\
 highestdegreenonum.value_counts(dropna=False).\
   sort_index()
 
-nls97.highestdegree.str.split(".")
-nls97.highestdegree.str.split(".").str[1].str.lstrip()
-
 # use findall with a simple example
 nls97.maritalstatus.head()
 nls97.maritalstatus.head().str.findall("r")
@@ -85,12 +82,12 @@ pd.crosstab(nls97.weeklyhrstv, nls97.weeklyhrstvnum)
 
 
 # replace values in a series with alternative values
-comphrsold = ['None','Less than 1 hour a week',
+comphrsold = ['Less than 1 hour a week',
   '1 to 3 hours a week','4 to 6 hours a week',
   '7 to 9 hours a week','10 hours or more a week']
-comphrsnew = ['A. None','B. Less than 1 hour a week',
-  'C. 1 to 3 hours a week','D. 4 to 6 hours a week',
-  'E. 7 to 9 hours a week','F. 10 hours or more a week']
+comphrsnew = ['A. Less than 1 hour a week',
+  'B. 1 to 3 hours a week','C. 4 to 6 hours a week',
+  'D. 7 to 9 hours a week','E. 10 hours or more a week']
 nls97.weeklyhrscomputer.value_counts().sort_index()
 nls97.weeklyhrscomputer.replace(comphrsold, comphrsnew, inplace=True)
 nls97.weeklyhrscomputer.value_counts().sort_index()

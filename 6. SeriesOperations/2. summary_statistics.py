@@ -5,7 +5,7 @@ pd.set_option('display.width', 78)
 pd.set_option('display.max_columns', 7)
 pd.set_option('display.max_rows', 200)
 pd.options.display.float_format = '{:,.2f}'.format
-nls97 = pd.read_csv("data/nls97f.csv")
+nls97 = pd.read_csv("data/nls97f.csv", low_memory=False)
 nls97.set_index("personid", inplace=True)
 
 # show some descriptive statistics

@@ -4,7 +4,7 @@ pd.set_option('display.width', 200)
 pd.set_option('display.max_columns', 30)
 pd.set_option('display.max_rows', 200)
 pd.options.display.float_format = '{:,.0f}'.format
-nls97 = pd.read_csv("data/nls97g.csv")
+nls97 = pd.read_csv("data/nls97g.csv", low_memory=False)
 nls97.set_index('personid', inplace=True)
 
 # view some of the weeks worked and college enrollment data
