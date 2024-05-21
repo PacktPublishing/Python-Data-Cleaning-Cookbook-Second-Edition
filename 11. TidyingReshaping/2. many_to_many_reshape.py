@@ -8,10 +8,9 @@ cma = pd.read_csv("data/cmacollections.csv")
 cma['category'] = cma.category.str.strip().str[0:15]
 cma['title'] = cma.title.str.strip().str[0:30]
 
-
 # show the cma collections data
-
 cma.shape
+
 cma.head(4).T
 cma.itemid.nunique()
 
@@ -56,6 +55,7 @@ cmacreators.loc[124733]
 cmacreators['birth_year'] = \
   cmacreators.birth_year.str.\
   findall("\d+").str[0].astype(float)
+    
 youngartists = \
   cmacreators.loc[cmacreators.birth_year>1950,
   ['creator']].assign(creatorbornafter1950='Y')
@@ -65,7 +65,6 @@ youngartists
 cmacollections = \
   pd.merge(cmacollections, youngartists, 
   left_on=['itemid'], right_on=['itemid'], how='left')
-cmacollections.creatorbornafter1950.fillna("N", inplace=True)
 cmacollections.fillna({'creatorbornafter1950':'N'}, inplace=True)
 cmacollections.shape
 cmacollections.creatorbornafter1950.value_counts()

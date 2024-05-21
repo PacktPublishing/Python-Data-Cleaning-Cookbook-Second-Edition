@@ -1,7 +1,7 @@
 import pandas as pd
 from pandasai.llm.openai import OpenAI
 from pandasai import SmartDataframe
-llm = OpenAI(api_token="Your API key")
+llm = OpenAI(api_token="Your API Key")
 
 pd.set_option('display.width', 200)
 pd.set_option('display.max_columns', 35)
@@ -17,7 +17,7 @@ nls97sdf = SmartDataframe(nls97, config={"llm": llm})
 
 # run some queries
 nls97sdf.chat("Show average of gpaoverall")
-nls97sdf.chat("Show average for each weeks worked columns")
+nls97sdf.chat("Show average for each weeks worked column")
 nls97sdf.chat("Show satmath average by gender")
 
 

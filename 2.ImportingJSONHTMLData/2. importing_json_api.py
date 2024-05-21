@@ -15,10 +15,14 @@ len(camcollections['data'])
 pprint.pprint(camcollections['data'][0])
 
 # flatten the data
-camcollectionsdf = pd.json_normalize(camcollections['data'], 'citations', ['accession_number','title','creation_date','collection','creators','type'])
+camcollectionsdf = \
+  pd.json_normalize(camcollections['data'], 
+  'citations', 
+  ['accession_number','title','creation_date',
+  'collection','creators','type'])
 camcollectionsdf.head(2).T
 creator = camcollectionsdf[:1].creators[0]
-print(type(creator[0]))
+type(creator[0])
 pprint.pprint(creator)
 
 camcollectionsdf['birthyear'] = camcollectionsdf.\
