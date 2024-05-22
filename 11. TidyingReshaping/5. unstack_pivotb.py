@@ -12,8 +12,10 @@ weeksworkedcols = ['weeksworked17','weeksworked18',
   'weeksworked19','weeksworked20','weeksworked21']
 
 weeksworkedstacked = nls97[weeksworkedcols].\
-  stack(future_stack=True)
+  stack()
 weeksworkedstacked.loc[[2,3]]
+
+pd.__version__
 
 # melt the data again
 weeksworkedmelted = nls97.reset_index().\

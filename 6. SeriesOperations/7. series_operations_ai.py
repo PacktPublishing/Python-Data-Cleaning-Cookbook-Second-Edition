@@ -30,7 +30,6 @@ nls97sdf.groupby(['evermarried','maritalstatus']).size()
 
 nls97sdf = nls97sdf.chat("if maritalstatus is ‘Never-married’ set evermarried2 to 'No', otherwise 'Yes'")
 nls97sdf.groupby(['evermarried2','maritalstatus']).size()
-nls97sdf.head(2).T
 
 nls97sdf = nls97sdf.chat("set weeksworkedavg to the average for weeksworked columns")
 nls97sdf
@@ -56,7 +55,6 @@ firstcase[['iso_code','continent','casedate',
 covidcasessdf = SmartDataframe(covidcases, config={"llm": llm})
 
 firstcasesdf = covidcasessdf.chat("Show first casedate and location and other values for each country.")
-firstcasesdf.info()
 firstcasesdf.shape
 #firstcasesdf = firstcasesdf.chat("Make location the index.")
 firstcasesdf[['location','continent','casedate',

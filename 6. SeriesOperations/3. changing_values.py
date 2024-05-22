@@ -36,5 +36,5 @@ nls97.gpaoverall.nlargest()
 nls97.loc[nls97.gpaoverall>4, 'gpaoverall'] = 4
 nls97.gpaoverall.nlargest()
 
-type(nls97.loc[[100061], 'gpaoverall'])
-type(nls97.loc[[100061], ['gpaoverall']])
+type(nls97.loc[[135335], 'gpaoverall'])
+type(nls97.loc[[135335], ['gpaoverall']])

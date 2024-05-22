@@ -16,9 +16,11 @@ nls97.shape
 
 # use stack to convert data from wide to long
 weeksworked = nls97[weeksworkedcols].\
-  stack(future_stack=True).\
+  stack().\
   reset_index().\
   rename(columns={'level_1':'year',0:'weeksworked'})
+
+pd.__version__
 
 weeksworked.loc[weeksworked.originalid.isin([2,3])]
 

@@ -5,7 +5,7 @@ from sklearn.preprocessing import OrdinalEncoder
 from sklearn.model_selection import train_test_split
 pd.set_option('display.width', 62)
 pd.set_option('display.max_columns', 7)
-pd.set_option('display.max_rows', 100)
+pd.set_option('display.max_rows', 200)
 pd.options.display.float_format = '{:,.0f}'.format
 nls97 = pd.read_csv("data/nls97g.csv", low_memory=False)
 nls97.set_index("personid", inplace=True)
@@ -39,6 +39,7 @@ X_demo_train_ohe.filter(regex='gen|mar', axis="columns").head(2).T
 X_demo_train.colenroct99.\
   sort_values().unique()
 X_demo_train.head()
+X_demo_train.info()
 
 oe = OrdinalEncoder(categories=\
   [X_demo_train.colenroct99.sort_values().\
@@ -54,4 +55,8 @@ X_demo_train.colenroct99.value_counts().\
   sort_index()
 X_demo_train_enc.colenroct99.value_counts().\
   sort_index()
+  
+  
+X_demo_train.head()
 
+nls97.loc[764231,:]

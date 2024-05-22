@@ -43,6 +43,10 @@ cmacreators.loc[cmacreators.itemid==124733,
 
 # do a many-to-many merge
 cma = pd.merge(cmacitations, cmacreators, on=['itemid'], how="outer")
-cma.loc[cma.itemid==124733, ['citation','creator','birth_year']]
+cma.set_index("itemid", inplace=True)
+cma.loc[124733, ['citation','creator','birth_year']]
 
 
+cma.info()
+
+cma.loc[5111]

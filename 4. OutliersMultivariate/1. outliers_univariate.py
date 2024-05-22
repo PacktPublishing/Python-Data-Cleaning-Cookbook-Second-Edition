@@ -100,7 +100,7 @@ plt.show()
 
 # do a log transformation of the covid data
 covidlogs = covidtotalsonly.copy()
-for col in covidtotalsonly.columns[1:]:
+for col in covidlogs.columns[1:]:
   covidlogs[col] = np.log1p(covidlogs[col])
 
 plt.hist(covidlogs['total_cases'], bins=7)
