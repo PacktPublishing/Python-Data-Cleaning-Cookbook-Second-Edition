@@ -1,7 +1,6 @@
 # import pandas and scikit learn's KNNImputer module
 import pandas as pd
 import numpy as np
-pd.options.display.float_format = '{:,.0f}'.format
 from missforest.missforest import MissForest
 import miceforest as mf
 nls97 = pd.read_csv("data/nls97g.csv", low_memory=False)

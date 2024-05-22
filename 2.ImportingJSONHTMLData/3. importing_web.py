@@ -37,7 +37,9 @@ pprint.pprint(labelrows[0:2])
 for i in range(len(datarows)):
   datarows[i].insert(0, labelrows[i])
 
-pprint.pprint(datarows[0:1])
+pprint.pprint(datarows[0:2])
+
+labelcols
 
 # load the data into pandas
 lowcases = pd.DataFrame(datarows, columns=labelcols)

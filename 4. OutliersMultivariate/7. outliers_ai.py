@@ -24,10 +24,6 @@ covidtotalssdf.chat("Show total cases per million 7 highest values and 7 lowest 
 
 covidtotalssdf.chat("Show total cases per million for locations with highest total cases per million in each region")
 
-covidtotalssdf.chat("Show total cases per million for locations that have extreme values for total cases per million")
-
-covidtotalssdf.chat("Show location, total_cases_pm, and total_deaths_pm for rows with high total_cases_pm and low total_deaths_pm")
-
 covidtotalssdf.chat("Show total cases per million and total deaths per million for locationss with high total_cases_pm and low total_deaths_pm")
 
 covidtotalssdf.chat("What variables are highly correlated with total cases")
